@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>XLeVR - Robot Arm Teleoperation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="vr_app.js" defer></script>
+    <script src="interface.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <!-- Settings Button -->
+    <div class="settings-button" onclick="openSettings()">⚙️</div>
+
+    <!-- Settings Modal -->
+    <div class="settings-modal" id="settingsModal">
+      <div class="settings-content">
+        <div class="settings-header">
+          <div class="settings-title">System Configuration</div>
+          <button class="close-button" onclick="closeSettings()">×</button>
+        </div>
+
+        <form id="settingsForm">
+          <div class="settings-section">
+            <h3>🌐 Network</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="httpsPort">HTTPS Port</label>
+                <input type="number" id="httpsPort" name="httpsPort" min="1024" max="65535">
+              </div>
+              <div class="form-group">
+                <label for="websocketPort">WebSocket Port</label>
+                <input type="number" id="websocketPort" name="websocketPort" min="1024" max="65535">
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-section">
+            <h3>🎮 Control</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="vrScale">VR Scale Factor</label>
+                <input type="number" id="vrScale" name="vrScale" step="0.1" min="0.1" max="5.0">
+              </div>
+              <div class="form-group">
+                <label for="gripRake">Grip Rake (°)</label>
+                <input type="number" id="gripRake" name="gripRake" step="1" min="0" max="90"
+                       title="Controller handle pitch tilt from vertical at natural grip. Meta Quest 3 ≈ 45°">
+              </div>
+              <div class="form-group">
+                <label for="gripYaw">Grip Yaw (°)</label>
+                <input type="number" id="gripYaw" name="gripYaw" step="1" min="0" max="45"
+                       title="Inward wrist-yaw magnitude at natural grip. Applied −yaw for left, +yaw for right.">
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-section">
+            <h3>📷 Camera Feed</h3>
+            <div class="form-group">
+              <label for="cameraFeedUrl">Feed URL (MJPEG / image endpoint)</label>
+              <input type="text" id="cameraFeedUrl" name="cameraFeedUrl"
+                     placeholder="http://robot-ip:8080/video_feed">
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button type="submit" class="save-button" id="saveButton">💾 Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Desktop Interface -->
+    <div class="desktop-interface" id="desktopInterface">
+      <div class="desktop-header">
+        <div class="desktop-title">XLeVR</div>
+        <div class="desktop-subtitle">Dual-arm robot teleoperation via VR controllers</div>
+
+        <!-- Status -->
+        <div class="status-section">
+          <h2>🤖 Status</h2>
+          <div class="status-grid">
+            <div class="status-item">
+              <div class="status-indicator" id="leftArmStatus"></div>
+              <span>Left Arm</span>
+            </div>
+            <div class="status-item">
+              <div class="status-indicator" id="rightArmStatus"></div>
+              <span>Right Arm</span>
+            </div>
+            <div class="status-item">
+              <div class="status-indicator" id="vrStatus"></div>
+              <span>VR</span>
+            </div>
+          </div>
+
+          <div class="robot-controls">
+            <button id="robotEngageBtn" class="engage-btn" onclick="toggleRobotEngagement()">
+              <span id="engageBtnText">🔌 Connect Robot</span>
+            </button>
+            <div class="engagement-status">
+              <span id="engagementStatusText">Motors Disengaged</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- VR instructions -->
+        <div class="vr-instructions-section">
+          <h2>🥽 VR Controller Instructions</h2>
+          <div class="instructions-content">
+            <div class="instructions-text">
+              <div class="instruction-item">
+                <strong>Setup:</strong> Open
+                <span id="vrServerUrl" style="font-family:monospace;background:rgba(255,255,255,.2);padding:2px 6px;border-radius:4px;">https://loading...</span>
+                in your headset browser and tap <em>Enter VR</em>.
+              </div>
+              <div class="instruction-item">
+                <strong>Activate arm:</strong> Hold <strong>Grip (Squeeze)</strong> on a controller to enable position/rotation tracking for that arm.
+              </div>
+              <div class="instruction-item">
+                <strong>Gripper:</strong> Pull <strong>Trigger</strong> to close; release to open.
+              </div>
+              <div class="instruction-item">
+                <strong>Chest yaw:</strong> Frozen by default. Press <strong>B</strong> on the right controller to toggle freeze; while unfrozen, the chest-yaw reference tracks your headset's facing direction.
+              </div>
+              <div class="instruction-item">
+                <strong>Reference frames:</strong> Click left thumbstick to toggle the rb + chest reference axes in VR.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Camera Feed -->
+        <div class="camera-feed-section">
+          <div class="section-header">
+            <h2>📷 Camera Feed</h2>
+            <button id="cameraFeedToggle" class="toggle-btn" onclick="toggleCameraFeed()">Show Feed</button>
+          </div>
+          <div id="cameraFeedContainer" style="display:none;">
+            <img id="cameraFeedImg" src="" alt="Camera feed"
+                 style="max-width:100%;border-radius:8px;border:2px solid rgba(255,255,255,0.3);" />
+          </div>
+        </div>
+
+        <!-- Keyboard help (collapsed by default) -->
+        <div class="keyboard-help">
+          <div class="keyboard-help-collapsed">
+            <div class="control-toggle" id="keyboardToggle" onclick="toggleKeyboardControl()">
+              <span>⌨️</span>
+              <span id="keyboardToggleText">Enable Keyboard Control</span>
+            </div>
+          </div>
+          <div class="keyboard-help-expanded">
+            <div class="keyboard-help-header">
+              <div class="control-toggle active" onclick="toggleKeyboardControl()">
+                <span>⌨️</span>
+                <span>Disable Keyboard Control</span>
+              </div>
+              <div class="help-title">Keyboard Controls</div>
+            </div>
+            <div class="help-columns">
+              <div class="help-column">
+                <h4>Left Arm</h4>
+                <div class="key-group">
+                  <div class="key-row"><span><kbd class="key">W</kbd>/<kbd class="key">S</kbd></span><span class="key-desc">Forward/Back</span></div>
+                  <div class="key-row"><span><kbd class="key">A</kbd>/<kbd class="key">D</kbd></span><span class="key-desc">Left/Right</span></div>
+                  <div class="key-row"><span><kbd class="key">Q</kbd>/<kbd class="key">E</kbd></span><span class="key-desc">Down/Up</span></div>
+                  <div class="key-row"><span><kbd class="key">Z</kbd>/<kbd class="key">X</kbd></span><span class="key-desc">Wrist Roll</span></div>
+                  <div class="key-row"><span><kbd class="key">F</kbd></span><span class="key-desc">Toggle Gripper</span></div>
+                </div>
+              </div>
+              <div class="help-column">
+                <h4>Right Arm</h4>
+                <div class="key-group">
+                  <div class="key-row"><span><kbd class="key">I</kbd>/<kbd class="key">K</kbd></span><span class="key-desc">Forward/Back</span></div>
+                  <div class="key-row"><span><kbd class="key">J</kbd>/<kbd class="key">L</kbd></span><span class="key-desc">Left/Right</span></div>
+                  <div class="key-row"><span><kbd class="key">U</kbd>/<kbd class="key">O</kbd></span><span class="key-desc">Up/Down</span></div>
+                  <div class="key-row"><span><kbd class="key">N</kbd>/<kbd class="key">M</kbd></span><span class="key-desc">Wrist Roll</span></div>
+                  <div class="key-row"><span><kbd class="key">;</kbd></span><span class="key-desc">Toggle Gripper</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end desktop-header -->
+    </div><!-- end desktop-interface -->
+
+    <!-- VR overlay (visible inside headset) -->
+    <div class="vr-content" id="vrContent">
+      <div class="vr-title">XLeVR · Ref frames: Menu btn</div>
+    </div>
+
+    <!-- A-Frame VR Scene -->
+    <a-scene vr-mode-ui="enabled: true;">
+      <a-entity webxr-passthrough="referenceSpaceType: local-floor"></a-entity>
+
+      <!-- Headset tracking -->
+      <a-entity id="headset" camera>
+        <a-text id="headsetInfo" value="headset\nxyz: ...\nrpy: ..."
+                position="0 0.02 -0.5" scale="0.05 0.05 0.05"
+                color="yellow" align="center" side="double"></a-text>
+      </a-entity>
+
+      <!-- Controllers -->
+      <a-entity id="leftHand" oculus-touch-controls="hand: left">
+        <a-text id="leftHandInfo" value="ee_left\nxyz: ...\nrpy: ..."
+                position="-0.08 0.04 -0.05" scale="0.05 0.05 0.05"
+                color="white" align="center" side="double"></a-text>
+      </a-entity>
+      <a-entity id="rightHand" oculus-touch-controls="hand: right">
+        <a-text id="rightHandInfo" value="ee_right\nxyz: ...\nrpy: ..."
+                position="0.08 0.04 -0.05" scale="0.05 0.05 0.05"
+                color="white" align="center" side="double"></a-text>
+      </a-entity>
+
+      <!-- In-VR camera overlay: feed panels (filled by vr_app.js) -->
+      <a-entity id="camPanels"></a-entity>
+    </a-scene>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const el = document.getElementById('vrServerUrl');
+        if (el) el.textContent = window.location.origin + '/';
+      });
+    </script>
+  </body>
+</html>

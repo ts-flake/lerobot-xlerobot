@@ -1,0 +1,14 @@
+[
+    ["base", "under_arm"],
+    ["base", "wrist_yaw_back"],
+    ["base", "wrist_yaw_front"],
+    ["base", "gripper_fixed"],
+    ["base", "gripper_jaw"],
+    ["base", "camera_mount"],
+    ["base_rotation", "under_arm"],
+    ["base_rotation", "wrist_yaw_back"],
+    ["base_rotation", "wrist_yaw_front"],
+    ["base_rotation", "gripper_fixed"],
+    ["base_rotation", "gripper_jaw"],
+    ["base_rotation", "camera_mount"]
+]
