@@ -30,7 +30,7 @@ from lerobot.processor.converters import (
     transition_to_robot_action,
 )
 from lerobot.robots.xlerobot_yaw import XLeRobotYaw, XLeRobotYawConfig
-from lerobot.robots.xlerobot_yaw.robot_action_processor import (
+from lerobot.robots.xlerobot_yaw.robot_kinematics_processor import (
     AnalyticalInverseKinematicsDeltaToJoints,
     InverseKinematicsDeltaToJoints,
 )
