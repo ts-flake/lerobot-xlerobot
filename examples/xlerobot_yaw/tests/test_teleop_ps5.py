@@ -2,7 +2,7 @@
 """Drive the real PS5 gamepad teleop through the real IK processor step, in placo (no robot).
 
 Reuses ``XLeRobotYawGamepad`` and ``InverseKinematicsDeltaToJoints`` /
-``AnalyticalInverseKinematicsDeltaToJoints`` exactly as ``teleoperate_ps5.py`` does — the
+``AnalyticalInverseKinematicsDeltaToJoints`` exactly as ``teleoperate.py`` does — the
 only difference is there is no robot, so commanded joints are fed back as the next
 observation (perfect tracking) and rendering is placo's kinematic display.
 

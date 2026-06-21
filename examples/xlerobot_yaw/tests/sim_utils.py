@@ -3,8 +3,8 @@
 
 The tests drive the *real* lerobot IK processor steps
 (``InverseKinematicsDeltaToJoints`` / ``AnalyticalInverseKinematicsDeltaToJoints``)
-from a real teleoperator, exactly as ``teleoperate_vr.py`` / ``teleoperate_ps5.py``
-do, but with no robot attached: each frame the commanded joints are fed straight
+from a real teleoperator, exactly as ``teleoperate.py`` does, but with no robot
+attached: each frame the commanded joints are fed straight
 back as the next observation (perfect tracking). Rendering is placo's kinematic
 display.
 
