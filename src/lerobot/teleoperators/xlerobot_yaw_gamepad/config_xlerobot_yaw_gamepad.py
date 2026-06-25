@@ -9,6 +9,7 @@ from ..config import TeleoperatorConfig
 class XLeRobotYawGamepadConfig(TeleoperatorConfig):
     fps: int = 30 # Hz
     console_level: str = 'info' # Logging level
+    gamepad_id: int = 0 # Which controller to open when none is injected (device index)
     stepsize: float | dict[str, float] = field(default_factory=lambda: {'ang': 20.0, 'pos': 0.04, 'gripper': 60.0}) # Stepsize in **velocity unit**, deg/s for angle, m/s for position
     enable_left_arm_control: bool = True # Enable left arm control; disable to use only right arm
     enable_base_control: bool = True # Enable base control

@@ -191,7 +191,7 @@ def get_gamepad_states(gamepad, keymap: dict[str, str]) -> dict[str, bool]:
     return states
 
 
-# Semantic button names that PS5Gamepad exposes through get_button().
+# Semantic button names that SDLGamepad exposes through get_button().
 _SEMANTIC_BUTTONS = (
     "a", "b", "x", "y",
     "lb", "rb", "lt", "rt",
@@ -244,8 +244,11 @@ _TRIGGER_THRESHOLD = 0.5
 _SDL_AXIS_DENOM = 32767.0
 
 
-class PS5Gamepad:
-    """PS5 DualSense wrapper that is robust across Linux distros / HID drivers.
+class SDLGamepad:
+    """Generic SDL/pygame game-controller wrapper, robust across Linux distros / HID drivers.
+
+    Works with any SDL-recognised controller (PS5 DualSense, Xbox, generic
+    pads); the name reflects the SDL GameController backend, not a specific pad.
 
     Why this class exists:
         The raw button/axis indices exposed by ``pygame.joystick`` depend on
@@ -300,22 +303,22 @@ class PS5Gamepad:
                     self._mode = "controller"
                     name = getattr(self._controller, "name", "<unknown>")
                     logger.info(
-                        "PS5Gamepad: using SDL GameController API "
+                        "SDLGamepad: using SDL GameController API "
                         f"(id={self.id}, name={name!r})"
                     )
                     return
                 logger.warning(
-                    f"PS5Gamepad: device {self.id} is not registered as an SDL "
+                    f"SDLGamepad: device {self.id} is not registered as an SDL "
                     "GameController; falling back to Joystick API."
                 )
             except Exception as e:
                 logger.warning(
-                    f"PS5Gamepad: SDL GameController init failed ({e!r}); "
+                    f"SDLGamepad: SDL GameController init failed ({e!r}); "
                     "falling back to Joystick API."
                 )
         else:
             logger.warning(
-                "PS5Gamepad: pygame._sdl2.controller unavailable; "
+                "SDLGamepad: pygame._sdl2.controller unavailable; "
                 "falling back to Joystick API."
             )
 
@@ -329,7 +332,7 @@ class PS5Gamepad:
         self._joystick_layout = self._detect_joystick_layout(self._joystick)
         guid = getattr(self._joystick, "get_guid", lambda: "?")()
         logger.info(
-            "PS5Gamepad: using Joystick API fallback "
+            "SDLGamepad: using Joystick API fallback "
             f"(id={self.id}, name={self._joystick.get_name()!r}, "
             f"guid={guid}, layout={self._joystick_layout!r})"
         )
@@ -503,7 +506,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
 
     print_decode_keymap(ALL_KEYMAP)
-    gamepad = PS5Gamepad()
+    gamepad = SDLGamepad()
     gamepad.connect()
     while gamepad.is_connected():
         states = get_gamepad_states(gamepad, ALL_KEYMAP)

@@ -34,11 +34,14 @@ from lerobot.configs import parser
 from lerobot.scripts.lerobot_teleoperate import TeleoperateConfig
 from lerobot.robots.xlerobot_yaw import XLeRobotYaw
 from lerobot.robots.xlerobot_yaw.utils.action_utils import move_robot_to_position, move_robot_to_zero_position
+from lerobot.teleoperators import make_teleoperator_from_config
+from lerobot.teleoperators.xlerobot_yaw_vr import XLeRobotYawVRConfig  # noqa: F401  (registers --teleop.type)
+from lerobot.teleoperators.xlerobot_yaw_gamepad import XLeRobotYawGamepadConfig  # noqa: F401  (registers --teleop.type)
 from lerobot.utils.robot_utils import precise_sleep
 from lerobot.utils.visualization_utils import init_rerun, log_rerun_data
 from lerobot.utils.color_logger import init_color_logging
 
-from teleop_common import build_ee_delta_to_joints_processor, make_teleop_device, wait_until_ready
+from teleop_common import build_ee_delta_to_joints_processor, wait_until_ready
 
 logger = logging.getLogger(__name__)
 
@@ -53,7 +56,7 @@ def main(cfg: TeleoperateConfig):
 
     # Initialize the robot and teleoperator
     robot = XLeRobotYaw(cfg.robot)
-    teleop_device = make_teleop_device(cfg.teleop)
+    teleop_device = make_teleoperator_from_config(cfg.teleop)
 
     # Build pipeline to convert teleop ee-delta action to joint action
     ee_delta_to_joints_processor = build_ee_delta_to_joints_processor(robot, cfg.teleop, FPS)

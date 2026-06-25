@@ -7,7 +7,7 @@ import numpy as np
 
 from ..teleoperator import Teleoperator
 from .config_xlerobot_yaw_gamepad import XLeRobotYawGamepadConfig
-from .gamepad_utils import ALL_KEYMAP, get_gamepad_states, PS5Gamepad, print_decode_keymap
+from .gamepad_utils import ALL_KEYMAP, get_gamepad_states, SDLGamepad, print_decode_keymap
 
 logger = logging.getLogger(__name__)
 
@@ -15,10 +15,13 @@ class XLeRobotYawGamepad(Teleoperator):
     config_class = XLeRobotYawGamepadConfig
     name = "xlerobot_yaw_gamepad"
 
-    def __init__(self, config: XLeRobotYawGamepadConfig, gamepad: PS5Gamepad | None = None):
+    def __init__(self, config: XLeRobotYawGamepadConfig, gamepad: SDLGamepad | None = None):
         super().__init__(config)
         self.config = config
-        self.gamepad = gamepad
+        # Default-construct the controller so the device can be built from config
+        # alone (e.g. via lerobot's make_teleoperator_from_config). `gamepad` stays
+        # injectable for tests/mocks. SDLGamepad() is side-effect-free until connect().
+        self.gamepad = gamepad if gamepad is not None else SDLGamepad(id=config.gamepad_id)
         self._prev_ts = None
 
         self.safe_exit = False

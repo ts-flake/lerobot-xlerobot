@@ -38,21 +38,9 @@ from lerobot.robots.xlerobot_yaw.robot_action_observation_processor import (
     RobotObservationFeatureSelect,
 )
 from lerobot.teleoperators import Teleoperator, TeleoperatorConfig
-from lerobot.teleoperators.xlerobot_yaw_vr import XLeRobotYawVR, XLeRobotYawVRConfig
-from lerobot.teleoperators.xlerobot_yaw_gamepad import XLeRobotYawGamepad, XLeRobotYawGamepadConfig
-from lerobot.teleoperators.xlerobot_yaw_gamepad.gamepad_utils import PS5Gamepad
 from lerobot.utils.robot_utils import precise_sleep
 
 logger = logging.getLogger(__name__)
-
-
-def make_teleop_device(config: TeleoperatorConfig) -> Teleoperator:
-    """Instantiate the teleop device (the gamepad needs a concrete PS5Gamepad handle)."""
-    if isinstance(config, XLeRobotYawVRConfig):
-        return XLeRobotYawVR(config)
-    if isinstance(config, XLeRobotYawGamepadConfig):
-        return XLeRobotYawGamepad(config, PS5Gamepad(id=0))
-    raise ValueError(f"Unsupported teleop config for xlerobot_yaw: {type(config).__name__}")
 
 
 def build_ee_delta_to_joints_processor(

@@ -17,7 +17,6 @@ Controls (right arm): right stick = EE x/z, RB + stick = EE y/pitch,
 import argparse
 
 from lerobot.teleoperators.xlerobot_yaw_gamepad import XLeRobotYawGamepad, XLeRobotYawGamepadConfig
-from lerobot.teleoperators.xlerobot_yaw_gamepad.gamepad_utils import PS5Gamepad
 from sim_utils import run_teleop_ik_test
 
 parser = argparse.ArgumentParser(description="Test the real IK step from a PS5 gamepad without a robot.")
@@ -27,7 +26,7 @@ parser.add_argument("--fps", default=30)
 args = parser.parse_args()
 
 config = XLeRobotYawGamepadConfig(use_placo_ik=(args.mode == "ik"), fps=int(args.fps))
-teleop = XLeRobotYawGamepad(config, PS5Gamepad(id=0))
+teleop = XLeRobotYawGamepad(config)  # SDLGamepad self-constructed from config
 teleop.connect()
 
 run_teleop_ik_test(teleop, config.use_placo_ik, config.zero_position_offset, fps=config.fps)

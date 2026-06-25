@@ -49,6 +49,9 @@ from lerobot.datasets import (
 from lerobot.scripts.lerobot_record import RecordConfig, record_loop
 from lerobot.robots.xlerobot_yaw import XLeRobotYaw
 from lerobot.robots.xlerobot_yaw.utils.action_utils import move_robot_to_position, move_robot_to_zero_position
+from lerobot.teleoperators import make_teleoperator_from_config
+from lerobot.teleoperators.xlerobot_yaw_vr import XLeRobotYawVRConfig  # noqa: F401  (registers --teleop.type)
+from lerobot.teleoperators.xlerobot_yaw_gamepad import XLeRobotYawGamepadConfig  # noqa: F401  (registers --teleop.type)
 from lerobot.utils.feature_utils import combine_feature_dicts
 from lerobot.utils.robot_utils import precise_sleep
 from lerobot.utils.visualization_utils import init_rerun
@@ -60,7 +63,6 @@ from teleop_common import (
     build_ee_delta_to_joints_processor,
     build_observation_feature_select,
     features_to_ignore,
-    make_teleop_device,
     wait_until_ready,
 )
 
@@ -93,7 +95,7 @@ def main(cfg: RecordConfig):
 
     # Initialize the robot and teleoperator
     robot = XLeRobotYaw(cfg.robot)
-    teleop = make_teleop_device(cfg.teleop)
+    teleop = make_teleoperator_from_config(cfg.teleop)
     if getattr(cfg.teleop, "stream_cameras_to_vr", False):
         logger.info("📷 Streaming camera frames to the in-VR overlay (stream_cameras_to_vr=true)")
 
