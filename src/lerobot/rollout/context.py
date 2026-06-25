@@ -46,6 +46,7 @@ from lerobot.processor import (
 from lerobot.processor.relative_action_processor import RelativeActionsProcessorStep
 from lerobot.robots import make_robot_from_config
 from lerobot.teleoperators import Teleoperator, make_teleoperator_from_config
+from lerobot.utils.constants import ACTION
 from lerobot.utils.feature_utils import combine_feature_dicts, hw_to_dataset_features
 
 from .configs import BaseStrategyConfig, DAggerStrategyConfig, RolloutConfig
@@ -298,11 +299,18 @@ def build_rollout_context(
     )
     dataset_features = combine_feature_dicts(action_dataset_features, observation_dataset_features)
     hw_features = hw_to_dataset_features(observation_features_hw, "observation")
-    raw_action_keys = list(action_features_hw.keys())
+    # Action keys come from the dataset action schema (i.e. after
+    # ``teleop_action_processor``), not the raw hw ``.pos`` set, so a
+    # feature-selected policy whose action space is a subset is mapped
+    # correctly: ``make_robot_action`` indexes the policy tensor positionally
+    # against these names, and ``get_action`` requires ``ordered_action_keys``
+    # to be a subset of them. With the default identity processor this equals
+    # the raw hw keys, so other robots are unaffected.
+    dataset_action_names = dataset_features[ACTION]["names"]
     policy_action_names = getattr(policy_config, "action_feature_names", None)
     ordered_action_keys = _resolve_action_key_order(
         list(policy_action_names) if policy_action_names else None,
-        raw_action_keys,
+        dataset_action_names,
     )
 
     # Validate visual features if no rename_map is active

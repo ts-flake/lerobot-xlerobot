@@ -46,19 +46,8 @@ from lerobot.datasets import (
     aggregate_pipeline_dataset_features,
     create_initial_features,
 )
-from lerobot.processor import RobotAction, RobotObservation, RobotProcessorPipeline
-from lerobot.processor.converters import (
-    robot_action_observation_to_transition,
-    transition_to_robot_action,
-    observation_to_transition,
-    transition_to_observation,
-)
 from lerobot.scripts.lerobot_record import RecordConfig, record_loop
 from lerobot.robots.xlerobot_yaw import XLeRobotYaw
-from lerobot.robots.xlerobot_yaw.robot_action_observation_processor import (
-    RobotActionFeatureSelect,
-    RobotObservationFeatureSelect,
-)
 from lerobot.robots.xlerobot_yaw.utils.action_utils import move_robot_to_position, move_robot_to_zero_position
 from lerobot.utils.feature_utils import combine_feature_dicts
 from lerobot.utils.robot_utils import precise_sleep
@@ -66,32 +55,16 @@ from lerobot.utils.visualization_utils import init_rerun
 from lerobot.utils.utils import log_say
 from lerobot.utils.color_logger import init_color_logging
 
-from teleop_common import build_ee_delta_to_joints_processor, make_teleop_device, wait_until_ready
+from teleop_common import (
+    build_action_feature_select,
+    build_ee_delta_to_joints_processor,
+    build_observation_feature_select,
+    features_to_ignore,
+    make_teleop_device,
+    wait_until_ready,
+)
 
 logger = logging.getLogger(__name__)
-
-
-def build_feature_select_processors(robot: XLeRobotYaw, teleop_config):
-    """Drop the action/observation features for any controls that are disabled."""
-    features_to_ignore = []
-    if not teleop_config.enable_left_arm_control:
-        features_to_ignore += [feat for feat in robot.action_features if "left_arm_" in feat]
-    if not teleop_config.enable_base_control:
-        features_to_ignore += ["x.vel", "y.vel", "theta.vel"]
-    if not teleop_config.enable_head_control:
-        features_to_ignore += [feat for feat in robot.action_features if "head_" in feat]
-
-    robot_action_processor = RobotProcessorPipeline[tuple[RobotAction, RobotObservation], RobotAction](
-        steps=[RobotActionFeatureSelect(features_to_ignore)],
-        to_transition=robot_action_observation_to_transition,
-        to_output=transition_to_robot_action,
-    )
-    robot_observation_processor = RobotProcessorPipeline[RobotObservation, RobotObservation](
-        steps=[RobotObservationFeatureSelect(features_to_ignore)],
-        to_transition=observation_to_transition,
-        to_output=transition_to_observation,
-    )
-    return robot_action_processor, robot_observation_processor
 
 
 @parser.wrap()
@@ -128,7 +101,14 @@ def main(cfg: RecordConfig):
     #   teleop_action_processor : ee-delta -> safe joint command (the recorded action *values*)
     #   robot_action_processor  : feature-select to the enabled DOFs (what's actually *sent*)
     teleop_action_processor = build_ee_delta_to_joints_processor(robot, cfg.teleop, FPS)
-    robot_action_processor, robot_observation_processor = build_feature_select_processors(robot, cfg.teleop)
+    ignore = features_to_ignore(
+        robot,
+        enable_left_arm_control=cfg.teleop.enable_left_arm_control,
+        enable_base_control=cfg.teleop.enable_base_control,
+        enable_head_control=cfg.teleop.enable_head_control,
+    )
+    robot_action_processor = build_action_feature_select(ignore)
+    robot_observation_processor = build_observation_feature_select(ignore)
 
     dataset_features = combine_feature_dicts(
         # Action schema is derived from robot_action_processor (the feature selector), not the IK

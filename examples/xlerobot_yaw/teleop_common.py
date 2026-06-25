@@ -19,6 +19,8 @@ from lerobot.processor import RobotAction, RobotObservation, RobotProcessorPipel
 from lerobot.processor.converters import (
     robot_action_observation_to_transition,
     transition_to_robot_action,
+    observation_to_transition,
+    transition_to_observation,
 )
 from lerobot.robots.xlerobot_yaw import XLeRobotYaw
 from lerobot.robots.xlerobot_yaw.robot_kinematics_processor import (
@@ -30,6 +32,10 @@ from lerobot.robots.xlerobot_yaw.robot_kinematics_processor import (
     EMAJointAction,
     RoundOffAction,
     LogAction,
+)
+from lerobot.robots.xlerobot_yaw.robot_action_observation_processor import (
+    RobotActionFeatureSelect,
+    RobotObservationFeatureSelect,
 )
 from lerobot.teleoperators import Teleoperator, TeleoperatorConfig
 from lerobot.teleoperators.xlerobot_yaw_vr import XLeRobotYawVR, XLeRobotYawVRConfig
@@ -113,3 +119,48 @@ def wait_until_ready(teleop_device: Teleoperator, timeout_s: float = 15.0) -> bo
     while teleop_device.is_calibrated is False:
         precise_sleep(0.1)
     return True
+
+
+def features_to_ignore(
+    robot: XLeRobotYaw,
+    *,
+    enable_left_arm_control: bool = True,
+    enable_base_control: bool = True,
+    enable_head_control: bool = False,
+) -> list[str]:
+    """Action/observation feature names to drop for the controls that are disabled.
+
+    Shared by record (to shape the recorded dataset) and rollout (to shape the
+    policy's observation and action schema so they match that dataset). The same
+    list is applied to both the action and observation feature-selects.
+    """
+    ignore: list[str] = []
+    if not enable_left_arm_control:
+        ignore += [feat for feat in robot.action_features if "left_arm_" in feat]
+    if not enable_base_control:
+        ignore += ["x.vel", "y.vel", "theta.vel"]
+    if not enable_head_control:
+        ignore += [feat for feat in robot.action_features if "head_" in feat]
+    return ignore
+
+
+def build_action_feature_select(
+    features_to_ignore: list[str],
+) -> RobotProcessorPipeline[tuple[RobotAction, RobotObservation], RobotAction]:
+    """Pipeline that drops the disabled controls from the robot action."""
+    return RobotProcessorPipeline[tuple[RobotAction, RobotObservation], RobotAction](
+        steps=[RobotActionFeatureSelect(features_to_ignore)],
+        to_transition=robot_action_observation_to_transition,
+        to_output=transition_to_robot_action,
+    )
+
+
+def build_observation_feature_select(
+    features_to_ignore: list[str],
+) -> RobotProcessorPipeline[RobotObservation, RobotObservation]:
+    """Pipeline that drops the disabled controls from the robot observation."""
+    return RobotProcessorPipeline[RobotObservation, RobotObservation](
+        steps=[RobotObservationFeatureSelect(features_to_ignore)],
+        to_transition=observation_to_transition,
+        to_output=transition_to_observation,
+    )
