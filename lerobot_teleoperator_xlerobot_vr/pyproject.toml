@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# NOTE: keep underscores. lerobot's register_third_party_plugins() does
+# importlib.import_module(<distribution Name>) verbatim.
+name = "lerobot_teleoperator_xlerobot_vr"
+version = "0.1.0"
+description = "LeRobot plugin: VR teleop for XLeRobot X (--teleop.type=xlerobot_x_vr)"
+requires-python = ">=3.10"
+dependencies = ["lerobot>=0.4.4", "numpy", "scipy>=1.14", "websockets>=12", "opencv-python-headless"]
+
+
+[tool.setuptools.packages.find]
+include = ["lerobot_teleoperator_xlerobot_vr*"]
+
+[tool.setuptools.package-data]
+lerobot_teleoperator_xlerobot_vr = ["web-ui/*", "*.pem"]

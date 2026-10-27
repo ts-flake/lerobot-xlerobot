@@ -1,0 +1,10 @@
+[
+    ["base", "under_arm"],
+    ["base", "wrist_yaw_back"],
+    ["base", "wrist_yaw_front"],
+    ["base", "gripper_frame"],
+    ["base_rotation", "under_arm"],
+    ["base_rotation", "wrist_yaw_back"],
+    ["base_rotation", "wrist_yaw_front"],
+    ["base_rotation", "gripper_frame"]
+]

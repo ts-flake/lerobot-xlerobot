@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# NOTE: keep underscores. lerobot's register_third_party_plugins() does
+# importlib.import_module(<distribution Name>) verbatim.
+name = "lerobot_teleoperator_xlerobot_gamepad"
+version = "0.1.0"
+description = "LeRobot plugin: gamepad teleop for XLeRobot X (--teleop.type=xlerobot_x_gamepad)"
+requires-python = ">=3.10"
+dependencies = ["lerobot>=0.4.4", "numpy", "pygame>=2.5.1,<2.7.0"]
+
+[tool.setuptools.packages.find]
+include = ["lerobot_teleoperator_xlerobot_gamepad*"]

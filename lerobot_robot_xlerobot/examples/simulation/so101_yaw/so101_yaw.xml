@@ -1,0 +1,729 @@
+<mujoco model="so101_yaw">
+  <compiler angle="radian" meshdir="assets/"/>
+
+  <asset>
+    <mesh name="sts3215" file="sts3215.stl"/>
+    <mesh name="sts3215_00000" file="convex_decomposition/sts3215_00000.stl"/>
+    <mesh name="sts3215_00001" file="convex_decomposition/sts3215_00001.stl"/>
+    <mesh name="sts3215_00002" file="convex_decomposition/sts3215_00002.stl"/>
+    <mesh name="sts3215_00003" file="convex_decomposition/sts3215_00003.stl"/>
+    <mesh name="sts3215_00004" file="convex_decomposition/sts3215_00004.stl"/>
+    <mesh name="sts3215_00005" file="convex_decomposition/sts3215_00005.stl"/>
+    <mesh name="sts3215_00006" file="convex_decomposition/sts3215_00006.stl"/>
+    <mesh name="sts3215_00007" file="convex_decomposition/sts3215_00007.stl"/>
+    <mesh name="sts3215_00008" file="convex_decomposition/sts3215_00008.stl"/>
+    <mesh name="sts3215_00009" file="convex_decomposition/sts3215_00009.stl"/>
+    <mesh name="sts3215_00010" file="convex_decomposition/sts3215_00010.stl"/>
+    <mesh name="sts3215_00011" file="convex_decomposition/sts3215_00011.stl"/>
+    <mesh name="sts3215_00012" file="convex_decomposition/sts3215_00012.stl"/>
+    <mesh name="sts3215_00013" file="convex_decomposition/sts3215_00013.stl"/>
+    <mesh name="sts3215_00014" file="convex_decomposition/sts3215_00014.stl"/>
+    <mesh name="sts3215_00015" file="convex_decomposition/sts3215_00015.stl"/>
+    <mesh name="base_motor_holder" file="base_motor_holder.stl"/>
+    <mesh name="base_motor_holder_00000" file="convex_decomposition/base_motor_holder_00000.stl"/>
+    <mesh name="base_motor_holder_00001" file="convex_decomposition/base_motor_holder_00001.stl"/>
+    <mesh name="base_motor_holder_00002" file="convex_decomposition/base_motor_holder_00002.stl"/>
+    <mesh name="base_motor_holder_00003" file="convex_decomposition/base_motor_holder_00003.stl"/>
+    <mesh name="base_motor_holder_00004" file="convex_decomposition/base_motor_holder_00004.stl"/>
+    <mesh name="base_motor_holder_00005" file="convex_decomposition/base_motor_holder_00005.stl"/>
+    <mesh name="base_motor_holder_00006" file="convex_decomposition/base_motor_holder_00006.stl"/>
+    <mesh name="base_motor_holder_00007" file="convex_decomposition/base_motor_holder_00007.stl"/>
+    <mesh name="base_motor_holder_00008" file="convex_decomposition/base_motor_holder_00008.stl"/>
+    <mesh name="base_motor_holder_00009" file="convex_decomposition/base_motor_holder_00009.stl"/>
+    <mesh name="base_motor_holder_00010" file="convex_decomposition/base_motor_holder_00010.stl"/>
+    <mesh name="base_motor_holder_00011" file="convex_decomposition/base_motor_holder_00011.stl"/>
+    <mesh name="base_motor_holder_00012" file="convex_decomposition/base_motor_holder_00012.stl"/>
+    <mesh name="base_motor_holder_00013" file="convex_decomposition/base_motor_holder_00013.stl"/>
+    <mesh name="base_motor_holder_00014" file="convex_decomposition/base_motor_holder_00014.stl"/>
+    <mesh name="base_motor_holder_00015" file="convex_decomposition/base_motor_holder_00015.stl"/>
+    <mesh name="base" file="base.stl"/>
+    <mesh name="base_00000" file="convex_decomposition/base_00000.stl"/>
+    <mesh name="base_00001" file="convex_decomposition/base_00001.stl"/>
+    <mesh name="base_00002" file="convex_decomposition/base_00002.stl"/>
+    <mesh name="base_00003" file="convex_decomposition/base_00003.stl"/>
+    <mesh name="base_00004" file="convex_decomposition/base_00004.stl"/>
+    <mesh name="base_00005" file="convex_decomposition/base_00005.stl"/>
+    <mesh name="base_00006" file="convex_decomposition/base_00006.stl"/>
+    <mesh name="base_00007" file="convex_decomposition/base_00007.stl"/>
+    <mesh name="base_00008" file="convex_decomposition/base_00008.stl"/>
+    <mesh name="base_00009" file="convex_decomposition/base_00009.stl"/>
+    <mesh name="base_00010" file="convex_decomposition/base_00010.stl"/>
+    <mesh name="base_00011" file="convex_decomposition/base_00011.stl"/>
+    <mesh name="base_00012" file="convex_decomposition/base_00012.stl"/>
+    <mesh name="base_00013" file="convex_decomposition/base_00013.stl"/>
+    <mesh name="base_00014" file="convex_decomposition/base_00014.stl"/>
+    <mesh name="base_00015" file="convex_decomposition/base_00015.stl"/>
+    <mesh name="arm_motor_holder" file="arm_motor_holder.stl"/>
+    <mesh name="arm_motor_holder_00000" file="convex_decomposition/arm_motor_holder_00000.stl"/>
+    <mesh name="arm_motor_holder_00001" file="convex_decomposition/arm_motor_holder_00001.stl"/>
+    <mesh name="arm_motor_holder_00002" file="convex_decomposition/arm_motor_holder_00002.stl"/>
+    <mesh name="arm_motor_holder_00003" file="convex_decomposition/arm_motor_holder_00003.stl"/>
+    <mesh name="arm_motor_holder_00004" file="convex_decomposition/arm_motor_holder_00004.stl"/>
+    <mesh name="arm_motor_holder_00005" file="convex_decomposition/arm_motor_holder_00005.stl"/>
+    <mesh name="arm_motor_holder_00006" file="convex_decomposition/arm_motor_holder_00006.stl"/>
+    <mesh name="arm_motor_holder_00007" file="convex_decomposition/arm_motor_holder_00007.stl"/>
+    <mesh name="arm_motor_holder_00008" file="convex_decomposition/arm_motor_holder_00008.stl"/>
+    <mesh name="arm_motor_holder_00009" file="convex_decomposition/arm_motor_holder_00009.stl"/>
+    <mesh name="arm_motor_holder_00010" file="convex_decomposition/arm_motor_holder_00010.stl"/>
+    <mesh name="arm_motor_holder_00011" file="convex_decomposition/arm_motor_holder_00011.stl"/>
+    <mesh name="arm_motor_holder_00012" file="convex_decomposition/arm_motor_holder_00012.stl"/>
+    <mesh name="arm_motor_holder_00013" file="convex_decomposition/arm_motor_holder_00013.stl"/>
+    <mesh name="arm_motor_holder_00014" file="convex_decomposition/arm_motor_holder_00014.stl"/>
+    <mesh name="arm_motor_holder_00015" file="convex_decomposition/arm_motor_holder_00015.stl"/>
+    <mesh name="base_rotation" file="base_rotation.stl"/>
+    <mesh name="base_rotation_00000" file="convex_decomposition/base_rotation_00000.stl"/>
+    <mesh name="base_rotation_00001" file="convex_decomposition/base_rotation_00001.stl"/>
+    <mesh name="base_rotation_00002" file="convex_decomposition/base_rotation_00002.stl"/>
+    <mesh name="base_rotation_00003" file="convex_decomposition/base_rotation_00003.stl"/>
+    <mesh name="base_rotation_00004" file="convex_decomposition/base_rotation_00004.stl"/>
+    <mesh name="base_rotation_00005" file="convex_decomposition/base_rotation_00005.stl"/>
+    <mesh name="base_rotation_00006" file="convex_decomposition/base_rotation_00006.stl"/>
+    <mesh name="base_rotation_00007" file="convex_decomposition/base_rotation_00007.stl"/>
+    <mesh name="base_rotation_00008" file="convex_decomposition/base_rotation_00008.stl"/>
+    <mesh name="base_rotation_00009" file="convex_decomposition/base_rotation_00009.stl"/>
+    <mesh name="base_rotation_00010" file="convex_decomposition/base_rotation_00010.stl"/>
+    <mesh name="base_rotation_00011" file="convex_decomposition/base_rotation_00011.stl"/>
+    <mesh name="base_rotation_00012" file="convex_decomposition/base_rotation_00012.stl"/>
+    <mesh name="base_rotation_00013" file="convex_decomposition/base_rotation_00013.stl"/>
+    <mesh name="base_rotation_00014" file="convex_decomposition/base_rotation_00014.stl"/>
+    <mesh name="base_rotation_00015" file="convex_decomposition/base_rotation_00015.stl"/>
+    <mesh name="sts3215_2_00000" file="convex_decomposition/sts3215_2_00000.stl"/>
+    <mesh name="sts3215_2_00001" file="convex_decomposition/sts3215_2_00001.stl"/>
+    <mesh name="sts3215_2_00002" file="convex_decomposition/sts3215_2_00002.stl"/>
+    <mesh name="sts3215_2_00003" file="convex_decomposition/sts3215_2_00003.stl"/>
+    <mesh name="sts3215_2_00004" file="convex_decomposition/sts3215_2_00004.stl"/>
+    <mesh name="sts3215_2_00005" file="convex_decomposition/sts3215_2_00005.stl"/>
+    <mesh name="sts3215_2_00006" file="convex_decomposition/sts3215_2_00006.stl"/>
+    <mesh name="sts3215_2_00007" file="convex_decomposition/sts3215_2_00007.stl"/>
+    <mesh name="sts3215_2_00008" file="convex_decomposition/sts3215_2_00008.stl"/>
+    <mesh name="sts3215_2_00009" file="convex_decomposition/sts3215_2_00009.stl"/>
+    <mesh name="sts3215_2_00010" file="convex_decomposition/sts3215_2_00010.stl"/>
+    <mesh name="sts3215_2_00011" file="convex_decomposition/sts3215_2_00011.stl"/>
+    <mesh name="sts3215_2_00012" file="convex_decomposition/sts3215_2_00012.stl"/>
+    <mesh name="sts3215_2_00013" file="convex_decomposition/sts3215_2_00013.stl"/>
+    <mesh name="sts3215_2_00014" file="convex_decomposition/sts3215_2_00014.stl"/>
+    <mesh name="sts3215_2_00015" file="convex_decomposition/sts3215_2_00015.stl"/>
+    <mesh name="sts3215_3_00000" file="convex_decomposition/sts3215_3_00000.stl"/>
+    <mesh name="sts3215_3_00001" file="convex_decomposition/sts3215_3_00001.stl"/>
+    <mesh name="sts3215_3_00002" file="convex_decomposition/sts3215_3_00002.stl"/>
+    <mesh name="sts3215_3_00003" file="convex_decomposition/sts3215_3_00003.stl"/>
+    <mesh name="sts3215_3_00004" file="convex_decomposition/sts3215_3_00004.stl"/>
+    <mesh name="sts3215_3_00005" file="convex_decomposition/sts3215_3_00005.stl"/>
+    <mesh name="sts3215_3_00006" file="convex_decomposition/sts3215_3_00006.stl"/>
+    <mesh name="sts3215_3_00007" file="convex_decomposition/sts3215_3_00007.stl"/>
+    <mesh name="sts3215_3_00008" file="convex_decomposition/sts3215_3_00008.stl"/>
+    <mesh name="sts3215_3_00009" file="convex_decomposition/sts3215_3_00009.stl"/>
+    <mesh name="sts3215_3_00010" file="convex_decomposition/sts3215_3_00010.stl"/>
+    <mesh name="sts3215_3_00011" file="convex_decomposition/sts3215_3_00011.stl"/>
+    <mesh name="sts3215_3_00012" file="convex_decomposition/sts3215_3_00012.stl"/>
+    <mesh name="sts3215_3_00013" file="convex_decomposition/sts3215_3_00013.stl"/>
+    <mesh name="sts3215_3_00014" file="convex_decomposition/sts3215_3_00014.stl"/>
+    <mesh name="sts3215_3_00015" file="convex_decomposition/sts3215_3_00015.stl"/>
+    <mesh name="upper_arm" file="upper_arm.stl"/>
+    <mesh name="upper_arm_00000" file="convex_decomposition/upper_arm_00000.stl"/>
+    <mesh name="upper_arm_00001" file="convex_decomposition/upper_arm_00001.stl"/>
+    <mesh name="upper_arm_00002" file="convex_decomposition/upper_arm_00002.stl"/>
+    <mesh name="upper_arm_00003" file="convex_decomposition/upper_arm_00003.stl"/>
+    <mesh name="upper_arm_00004" file="convex_decomposition/upper_arm_00004.stl"/>
+    <mesh name="upper_arm_00005" file="convex_decomposition/upper_arm_00005.stl"/>
+    <mesh name="upper_arm_00006" file="convex_decomposition/upper_arm_00006.stl"/>
+    <mesh name="upper_arm_00007" file="convex_decomposition/upper_arm_00007.stl"/>
+    <mesh name="upper_arm_00008" file="convex_decomposition/upper_arm_00008.stl"/>
+    <mesh name="upper_arm_00009" file="convex_decomposition/upper_arm_00009.stl"/>
+    <mesh name="upper_arm_00010" file="convex_decomposition/upper_arm_00010.stl"/>
+    <mesh name="upper_arm_00011" file="convex_decomposition/upper_arm_00011.stl"/>
+    <mesh name="upper_arm_00012" file="convex_decomposition/upper_arm_00012.stl"/>
+    <mesh name="upper_arm_00013" file="convex_decomposition/upper_arm_00013.stl"/>
+    <mesh name="upper_arm_00014" file="convex_decomposition/upper_arm_00014.stl"/>
+    <mesh name="upper_arm_00015" file="convex_decomposition/upper_arm_00015.stl"/>
+    <mesh name="under_arm" file="under_arm.stl"/>
+    <mesh name="under_arm_00000" file="convex_decomposition/under_arm_00000.stl"/>
+    <mesh name="under_arm_00001" file="convex_decomposition/under_arm_00001.stl"/>
+    <mesh name="under_arm_00002" file="convex_decomposition/under_arm_00002.stl"/>
+    <mesh name="under_arm_00003" file="convex_decomposition/under_arm_00003.stl"/>
+    <mesh name="under_arm_00004" file="convex_decomposition/under_arm_00004.stl"/>
+    <mesh name="under_arm_00005" file="convex_decomposition/under_arm_00005.stl"/>
+    <mesh name="under_arm_00006" file="convex_decomposition/under_arm_00006.stl"/>
+    <mesh name="under_arm_00007" file="convex_decomposition/under_arm_00007.stl"/>
+    <mesh name="under_arm_00008" file="convex_decomposition/under_arm_00008.stl"/>
+    <mesh name="under_arm_00009" file="convex_decomposition/under_arm_00009.stl"/>
+    <mesh name="under_arm_00010" file="convex_decomposition/under_arm_00010.stl"/>
+    <mesh name="under_arm_00011" file="convex_decomposition/under_arm_00011.stl"/>
+    <mesh name="under_arm_00012" file="convex_decomposition/under_arm_00012.stl"/>
+    <mesh name="under_arm_00013" file="convex_decomposition/under_arm_00013.stl"/>
+    <mesh name="under_arm_00014" file="convex_decomposition/under_arm_00014.stl"/>
+    <mesh name="under_arm_00015" file="convex_decomposition/under_arm_00015.stl"/>
+    <mesh name="sts3215_4_00000" file="convex_decomposition/sts3215_4_00000.stl"/>
+    <mesh name="sts3215_4_00001" file="convex_decomposition/sts3215_4_00001.stl"/>
+    <mesh name="sts3215_4_00002" file="convex_decomposition/sts3215_4_00002.stl"/>
+    <mesh name="sts3215_4_00003" file="convex_decomposition/sts3215_4_00003.stl"/>
+    <mesh name="sts3215_4_00004" file="convex_decomposition/sts3215_4_00004.stl"/>
+    <mesh name="sts3215_4_00005" file="convex_decomposition/sts3215_4_00005.stl"/>
+    <mesh name="sts3215_4_00006" file="convex_decomposition/sts3215_4_00006.stl"/>
+    <mesh name="sts3215_4_00007" file="convex_decomposition/sts3215_4_00007.stl"/>
+    <mesh name="sts3215_4_00008" file="convex_decomposition/sts3215_4_00008.stl"/>
+    <mesh name="sts3215_4_00009" file="convex_decomposition/sts3215_4_00009.stl"/>
+    <mesh name="sts3215_4_00010" file="convex_decomposition/sts3215_4_00010.stl"/>
+    <mesh name="sts3215_4_00011" file="convex_decomposition/sts3215_4_00011.stl"/>
+    <mesh name="sts3215_4_00012" file="convex_decomposition/sts3215_4_00012.stl"/>
+    <mesh name="sts3215_4_00013" file="convex_decomposition/sts3215_4_00013.stl"/>
+    <mesh name="sts3215_4_00014" file="convex_decomposition/sts3215_4_00014.stl"/>
+    <mesh name="sts3215_4_00015" file="convex_decomposition/sts3215_4_00015.stl"/>
+    <mesh name="wrist_motor_holder" file="wrist_motor_holder.stl"/>
+    <mesh name="wrist_motor_holder_00000" file="convex_decomposition/wrist_motor_holder_00000.stl"/>
+    <mesh name="wrist_motor_holder_00001" file="convex_decomposition/wrist_motor_holder_00001.stl"/>
+    <mesh name="wrist_motor_holder_00002" file="convex_decomposition/wrist_motor_holder_00002.stl"/>
+    <mesh name="wrist_motor_holder_00003" file="convex_decomposition/wrist_motor_holder_00003.stl"/>
+    <mesh name="wrist_motor_holder_00004" file="convex_decomposition/wrist_motor_holder_00004.stl"/>
+    <mesh name="wrist_motor_holder_00005" file="convex_decomposition/wrist_motor_holder_00005.stl"/>
+    <mesh name="wrist_motor_holder_00006" file="convex_decomposition/wrist_motor_holder_00006.stl"/>
+    <mesh name="wrist_motor_holder_00007" file="convex_decomposition/wrist_motor_holder_00007.stl"/>
+    <mesh name="wrist_motor_holder_00008" file="convex_decomposition/wrist_motor_holder_00008.stl"/>
+    <mesh name="wrist_motor_holder_00009" file="convex_decomposition/wrist_motor_holder_00009.stl"/>
+    <mesh name="wrist_motor_holder_00010" file="convex_decomposition/wrist_motor_holder_00010.stl"/>
+    <mesh name="wrist_motor_holder_00011" file="convex_decomposition/wrist_motor_holder_00011.stl"/>
+    <mesh name="wrist_motor_holder_00012" file="convex_decomposition/wrist_motor_holder_00012.stl"/>
+    <mesh name="wrist_motor_holder_00013" file="convex_decomposition/wrist_motor_holder_00013.stl"/>
+    <mesh name="wrist_motor_holder_00014" file="convex_decomposition/wrist_motor_holder_00014.stl"/>
+    <mesh name="wrist_motor_holder_00015" file="convex_decomposition/wrist_motor_holder_00015.stl"/>
+    <mesh name="wrist_yaw_back" file="wrist_yaw_back.stl"/>
+    <mesh name="wrist_yaw_back_00000" file="convex_decomposition/wrist_yaw_back_00000.stl"/>
+    <mesh name="wrist_yaw_back_00001" file="convex_decomposition/wrist_yaw_back_00001.stl"/>
+    <mesh name="wrist_yaw_back_00002" file="convex_decomposition/wrist_yaw_back_00002.stl"/>
+    <mesh name="wrist_yaw_back_00003" file="convex_decomposition/wrist_yaw_back_00003.stl"/>
+    <mesh name="wrist_yaw_back_00004" file="convex_decomposition/wrist_yaw_back_00004.stl"/>
+    <mesh name="wrist_yaw_back_00005" file="convex_decomposition/wrist_yaw_back_00005.stl"/>
+    <mesh name="wrist_yaw_back_00006" file="convex_decomposition/wrist_yaw_back_00006.stl"/>
+    <mesh name="wrist_yaw_back_00007" file="convex_decomposition/wrist_yaw_back_00007.stl"/>
+    <mesh name="wrist_yaw_back_00008" file="convex_decomposition/wrist_yaw_back_00008.stl"/>
+    <mesh name="wrist_yaw_back_00009" file="convex_decomposition/wrist_yaw_back_00009.stl"/>
+    <mesh name="wrist_yaw_back_00010" file="convex_decomposition/wrist_yaw_back_00010.stl"/>
+    <mesh name="wrist_yaw_back_00011" file="convex_decomposition/wrist_yaw_back_00011.stl"/>
+    <mesh name="wrist_yaw_back_00012" file="convex_decomposition/wrist_yaw_back_00012.stl"/>
+    <mesh name="wrist_yaw_back_00013" file="convex_decomposition/wrist_yaw_back_00013.stl"/>
+    <mesh name="wrist_yaw_back_00014" file="convex_decomposition/wrist_yaw_back_00014.stl"/>
+    <mesh name="wrist_yaw_back_00015" file="convex_decomposition/wrist_yaw_back_00015.stl"/>
+    <mesh name="sts3215_5_00000" file="convex_decomposition/sts3215_5_00000.stl"/>
+    <mesh name="sts3215_5_00001" file="convex_decomposition/sts3215_5_00001.stl"/>
+    <mesh name="sts3215_5_00002" file="convex_decomposition/sts3215_5_00002.stl"/>
+    <mesh name="sts3215_5_00003" file="convex_decomposition/sts3215_5_00003.stl"/>
+    <mesh name="sts3215_5_00004" file="convex_decomposition/sts3215_5_00004.stl"/>
+    <mesh name="sts3215_5_00005" file="convex_decomposition/sts3215_5_00005.stl"/>
+    <mesh name="sts3215_5_00006" file="convex_decomposition/sts3215_5_00006.stl"/>
+    <mesh name="sts3215_5_00007" file="convex_decomposition/sts3215_5_00007.stl"/>
+    <mesh name="sts3215_5_00008" file="convex_decomposition/sts3215_5_00008.stl"/>
+    <mesh name="sts3215_5_00009" file="convex_decomposition/sts3215_5_00009.stl"/>
+    <mesh name="sts3215_5_00010" file="convex_decomposition/sts3215_5_00010.stl"/>
+    <mesh name="sts3215_5_00011" file="convex_decomposition/sts3215_5_00011.stl"/>
+    <mesh name="sts3215_5_00012" file="convex_decomposition/sts3215_5_00012.stl"/>
+    <mesh name="sts3215_5_00013" file="convex_decomposition/sts3215_5_00013.stl"/>
+    <mesh name="sts3215_5_00014" file="convex_decomposition/sts3215_5_00014.stl"/>
+    <mesh name="sts3215_5_00015" file="convex_decomposition/sts3215_5_00015.stl"/>
+    <mesh name="sts3215_6_00000" file="convex_decomposition/sts3215_6_00000.stl"/>
+    <mesh name="sts3215_6_00001" file="convex_decomposition/sts3215_6_00001.stl"/>
+    <mesh name="sts3215_6_00002" file="convex_decomposition/sts3215_6_00002.stl"/>
+    <mesh name="sts3215_6_00003" file="convex_decomposition/sts3215_6_00003.stl"/>
+    <mesh name="sts3215_6_00004" file="convex_decomposition/sts3215_6_00004.stl"/>
+    <mesh name="sts3215_6_00005" file="convex_decomposition/sts3215_6_00005.stl"/>
+    <mesh name="sts3215_6_00006" file="convex_decomposition/sts3215_6_00006.stl"/>
+    <mesh name="sts3215_6_00007" file="convex_decomposition/sts3215_6_00007.stl"/>
+    <mesh name="sts3215_6_00008" file="convex_decomposition/sts3215_6_00008.stl"/>
+    <mesh name="sts3215_6_00009" file="convex_decomposition/sts3215_6_00009.stl"/>
+    <mesh name="sts3215_6_00010" file="convex_decomposition/sts3215_6_00010.stl"/>
+    <mesh name="sts3215_6_00011" file="convex_decomposition/sts3215_6_00011.stl"/>
+    <mesh name="sts3215_6_00012" file="convex_decomposition/sts3215_6_00012.stl"/>
+    <mesh name="sts3215_6_00013" file="convex_decomposition/sts3215_6_00013.stl"/>
+    <mesh name="sts3215_6_00014" file="convex_decomposition/sts3215_6_00014.stl"/>
+    <mesh name="sts3215_6_00015" file="convex_decomposition/sts3215_6_00015.stl"/>
+    <mesh name="wrist_yaw_front" file="wrist_yaw_front.stl"/>
+    <mesh name="wrist_yaw_front_00000" file="convex_decomposition/wrist_yaw_front_00000.stl"/>
+    <mesh name="wrist_yaw_front_00001" file="convex_decomposition/wrist_yaw_front_00001.stl"/>
+    <mesh name="wrist_yaw_front_00002" file="convex_decomposition/wrist_yaw_front_00002.stl"/>
+    <mesh name="wrist_yaw_front_00003" file="convex_decomposition/wrist_yaw_front_00003.stl"/>
+    <mesh name="wrist_yaw_front_00004" file="convex_decomposition/wrist_yaw_front_00004.stl"/>
+    <mesh name="wrist_yaw_front_00005" file="convex_decomposition/wrist_yaw_front_00005.stl"/>
+    <mesh name="wrist_yaw_front_00006" file="convex_decomposition/wrist_yaw_front_00006.stl"/>
+    <mesh name="wrist_yaw_front_00007" file="convex_decomposition/wrist_yaw_front_00007.stl"/>
+    <mesh name="wrist_yaw_front_00008" file="convex_decomposition/wrist_yaw_front_00008.stl"/>
+    <mesh name="wrist_yaw_front_00009" file="convex_decomposition/wrist_yaw_front_00009.stl"/>
+    <mesh name="wrist_yaw_front_00010" file="convex_decomposition/wrist_yaw_front_00010.stl"/>
+    <mesh name="wrist_yaw_front_00011" file="convex_decomposition/wrist_yaw_front_00011.stl"/>
+    <mesh name="wrist_yaw_front_00012" file="convex_decomposition/wrist_yaw_front_00012.stl"/>
+    <mesh name="wrist_yaw_front_00013" file="convex_decomposition/wrist_yaw_front_00013.stl"/>
+    <mesh name="wrist_yaw_front_00014" file="convex_decomposition/wrist_yaw_front_00014.stl"/>
+    <mesh name="wrist_yaw_front_00015" file="convex_decomposition/wrist_yaw_front_00015.stl"/>
+    <mesh name="gripper_fixed" file="gripper_fixed.stl"/>
+    <mesh name="gripper_fixed_00000" file="convex_decomposition/gripper_fixed_00000.stl"/>
+    <mesh name="gripper_fixed_00001" file="convex_decomposition/gripper_fixed_00001.stl"/>
+    <mesh name="gripper_fixed_00002" file="convex_decomposition/gripper_fixed_00002.stl"/>
+    <mesh name="gripper_fixed_00003" file="convex_decomposition/gripper_fixed_00003.stl"/>
+    <mesh name="gripper_fixed_00004" file="convex_decomposition/gripper_fixed_00004.stl"/>
+    <mesh name="gripper_fixed_00005" file="convex_decomposition/gripper_fixed_00005.stl"/>
+    <mesh name="gripper_fixed_00006" file="convex_decomposition/gripper_fixed_00006.stl"/>
+    <mesh name="gripper_fixed_00007" file="convex_decomposition/gripper_fixed_00007.stl"/>
+    <mesh name="gripper_fixed_00008" file="convex_decomposition/gripper_fixed_00008.stl"/>
+    <mesh name="gripper_fixed_00009" file="convex_decomposition/gripper_fixed_00009.stl"/>
+    <mesh name="gripper_fixed_00010" file="convex_decomposition/gripper_fixed_00010.stl"/>
+    <mesh name="gripper_fixed_00011" file="convex_decomposition/gripper_fixed_00011.stl"/>
+    <mesh name="gripper_fixed_00012" file="convex_decomposition/gripper_fixed_00012.stl"/>
+    <mesh name="gripper_fixed_00013" file="convex_decomposition/gripper_fixed_00013.stl"/>
+    <mesh name="gripper_fixed_00014" file="convex_decomposition/gripper_fixed_00014.stl"/>
+    <mesh name="gripper_fixed_00015" file="convex_decomposition/gripper_fixed_00015.stl"/>
+    <mesh name="sts3215_7_00000" file="convex_decomposition/sts3215_7_00000.stl"/>
+    <mesh name="sts3215_7_00001" file="convex_decomposition/sts3215_7_00001.stl"/>
+    <mesh name="sts3215_7_00002" file="convex_decomposition/sts3215_7_00002.stl"/>
+    <mesh name="sts3215_7_00003" file="convex_decomposition/sts3215_7_00003.stl"/>
+    <mesh name="sts3215_7_00004" file="convex_decomposition/sts3215_7_00004.stl"/>
+    <mesh name="sts3215_7_00005" file="convex_decomposition/sts3215_7_00005.stl"/>
+    <mesh name="sts3215_7_00006" file="convex_decomposition/sts3215_7_00006.stl"/>
+    <mesh name="sts3215_7_00007" file="convex_decomposition/sts3215_7_00007.stl"/>
+    <mesh name="sts3215_7_00008" file="convex_decomposition/sts3215_7_00008.stl"/>
+    <mesh name="sts3215_7_00009" file="convex_decomposition/sts3215_7_00009.stl"/>
+    <mesh name="sts3215_7_00010" file="convex_decomposition/sts3215_7_00010.stl"/>
+    <mesh name="sts3215_7_00011" file="convex_decomposition/sts3215_7_00011.stl"/>
+    <mesh name="sts3215_7_00012" file="convex_decomposition/sts3215_7_00012.stl"/>
+    <mesh name="sts3215_7_00013" file="convex_decomposition/sts3215_7_00013.stl"/>
+    <mesh name="sts3215_7_00014" file="convex_decomposition/sts3215_7_00014.stl"/>
+    <mesh name="sts3215_7_00015" file="convex_decomposition/sts3215_7_00015.stl"/>
+    <mesh name="wrist_camera_mount" file="wrist_camera_mount.stl"/>
+    <mesh name="wrist_camera_mount_00000" file="convex_decomposition/wrist_camera_mount_00000.stl"/>
+    <mesh name="wrist_camera_mount_00001" file="convex_decomposition/wrist_camera_mount_00001.stl"/>
+    <mesh name="wrist_camera_mount_00002" file="convex_decomposition/wrist_camera_mount_00002.stl"/>
+    <mesh name="wrist_camera_mount_00003" file="convex_decomposition/wrist_camera_mount_00003.stl"/>
+    <mesh name="wrist_camera_mount_00004" file="convex_decomposition/wrist_camera_mount_00004.stl"/>
+    <mesh name="wrist_camera_mount_00005" file="convex_decomposition/wrist_camera_mount_00005.stl"/>
+    <mesh name="wrist_camera_mount_00006" file="convex_decomposition/wrist_camera_mount_00006.stl"/>
+    <mesh name="wrist_camera_mount_00007" file="convex_decomposition/wrist_camera_mount_00007.stl"/>
+    <mesh name="wrist_camera_mount_00008" file="convex_decomposition/wrist_camera_mount_00008.stl"/>
+    <mesh name="wrist_camera_mount_00009" file="convex_decomposition/wrist_camera_mount_00009.stl"/>
+    <mesh name="wrist_camera_mount_00010" file="convex_decomposition/wrist_camera_mount_00010.stl"/>
+    <mesh name="wrist_camera_mount_00011" file="convex_decomposition/wrist_camera_mount_00011.stl"/>
+    <mesh name="wrist_camera_mount_00012" file="convex_decomposition/wrist_camera_mount_00012.stl"/>
+    <mesh name="wrist_camera_mount_00013" file="convex_decomposition/wrist_camera_mount_00013.stl"/>
+    <mesh name="wrist_camera_mount_00014" file="convex_decomposition/wrist_camera_mount_00014.stl"/>
+    <mesh name="wrist_camera_mount_00015" file="convex_decomposition/wrist_camera_mount_00015.stl"/>
+    <mesh name="camera_uvc_25x32" file="camera_uvc_25x32.stl"/>
+    <mesh name="camera_uvc_25x32_00000" file="convex_decomposition/camera_uvc_25x32_00000.stl"/>
+    <mesh name="camera_uvc_25x32_00001" file="convex_decomposition/camera_uvc_25x32_00001.stl"/>
+    <mesh name="camera_uvc_25x32_00002" file="convex_decomposition/camera_uvc_25x32_00002.stl"/>
+    <mesh name="camera_uvc_25x32_00003" file="convex_decomposition/camera_uvc_25x32_00003.stl"/>
+    <mesh name="camera_uvc_25x32_00004" file="convex_decomposition/camera_uvc_25x32_00004.stl"/>
+    <mesh name="camera_uvc_25x32_00005" file="convex_decomposition/camera_uvc_25x32_00005.stl"/>
+    <mesh name="camera_uvc_25x32_00006" file="convex_decomposition/camera_uvc_25x32_00006.stl"/>
+    <mesh name="camera_uvc_25x32_00007" file="convex_decomposition/camera_uvc_25x32_00007.stl"/>
+    <mesh name="camera_uvc_25x32_00008" file="convex_decomposition/camera_uvc_25x32_00008.stl"/>
+    <mesh name="camera_uvc_25x32_00009" file="convex_decomposition/camera_uvc_25x32_00009.stl"/>
+    <mesh name="camera_uvc_25x32_00010" file="convex_decomposition/camera_uvc_25x32_00010.stl"/>
+    <mesh name="camera_uvc_25x32_00011" file="convex_decomposition/camera_uvc_25x32_00011.stl"/>
+    <mesh name="camera_uvc_25x32_00012" file="convex_decomposition/camera_uvc_25x32_00012.stl"/>
+    <mesh name="camera_uvc_25x32_00013" file="convex_decomposition/camera_uvc_25x32_00013.stl"/>
+    <mesh name="camera_uvc_25x32_00014" file="convex_decomposition/camera_uvc_25x32_00014.stl"/>
+    <mesh name="camera_uvc_25x32_00015" file="convex_decomposition/camera_uvc_25x32_00015.stl"/>
+    <mesh name="gripper_jaw" file="gripper_jaw.stl"/>
+    <mesh name="gripper_jaw_00000" file="convex_decomposition/gripper_jaw_00000.stl"/>
+    <mesh name="gripper_jaw_00001" file="convex_decomposition/gripper_jaw_00001.stl"/>
+    <mesh name="gripper_jaw_00002" file="convex_decomposition/gripper_jaw_00002.stl"/>
+    <mesh name="gripper_jaw_00003" file="convex_decomposition/gripper_jaw_00003.stl"/>
+    <mesh name="gripper_jaw_00004" file="convex_decomposition/gripper_jaw_00004.stl"/>
+    <mesh name="gripper_jaw_00005" file="convex_decomposition/gripper_jaw_00005.stl"/>
+    <mesh name="gripper_jaw_00006" file="convex_decomposition/gripper_jaw_00006.stl"/>
+    <mesh name="gripper_jaw_00007" file="convex_decomposition/gripper_jaw_00007.stl"/>
+    <mesh name="gripper_jaw_00008" file="convex_decomposition/gripper_jaw_00008.stl"/>
+    <mesh name="gripper_jaw_00009" file="convex_decomposition/gripper_jaw_00009.stl"/>
+    <mesh name="gripper_jaw_00010" file="convex_decomposition/gripper_jaw_00010.stl"/>
+    <mesh name="gripper_jaw_00011" file="convex_decomposition/gripper_jaw_00011.stl"/>
+    <mesh name="gripper_jaw_00012" file="convex_decomposition/gripper_jaw_00012.stl"/>
+    <mesh name="gripper_jaw_00013" file="convex_decomposition/gripper_jaw_00013.stl"/>
+    <mesh name="gripper_jaw_00014" file="convex_decomposition/gripper_jaw_00014.stl"/>
+    <mesh name="gripper_jaw_00015" file="convex_decomposition/gripper_jaw_00015.stl"/>
+  </asset>
+
+  <worldbody>
+    <body name="base">
+      <inertial pos="-0.00654505 -0.0274557 0.034086" quat="0.401704 0.535015 0.641967 0.374528" mass="0.151" diaginertia="0.000135765 0.0001337 0.000125554"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" quat="1 0 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00000"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00001"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00002"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00003"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00004"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00005"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" quat="1 0 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00006"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00007"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00008"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" quat="1 0 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00009"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" quat="1 0 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00010"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" quat="1 0 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00011"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00012"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00013"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00014"/>
+      <geom pos="0.00489886 -0.0272511 0.0461" quat="1 0 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_00015"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00000"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00001"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00002"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00003"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00004"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00005"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00006"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00007"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00008"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00009"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00010"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00011"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00012"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00013"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00014"/>
+      <geom pos="-0.0129122 -0.0276006 0.0381" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_motor_holder_00015"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="base"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00000"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00001"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00002"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00003"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00004"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00005"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00006"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00007"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00008"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00009"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00010"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00011"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00012"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00013"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00014"/>
+      <geom pos="-0.0275011 -0.0275011 0" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_00015"/>
+      <body name="base_rotation" pos="0.0173989 -0.0272511 0.0648" quat="1.32679e-06 1 0 0">
+        <inertial pos="0.0309888 5.41298e-05 -0.0231919" quat="0.999809 -0.00127323 -0.0111621 0.0160015" mass="0.102" diaginertia="9.03315e-05 8.80788e-05 2.50181e-05"/>
+        <joint name="joint1" pos="0 0 0" axis="0 0 1" range="-1.91986 1.91986" actuatorfrcrange="-3.3 3.3"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00000"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00001"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00002"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00003"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00004"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00005"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00006"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00007"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00008"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00009"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00010"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00011"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00012"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00013"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00014"/>
+        <geom pos="0.0328847 9.91675e-05 -0.01" quat="1.32679e-06 -1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="arm_motor_holder_00015"/>
+        <geom pos="0 0 0.0181" quat="1.76038e-12 1.32679e-06 1 1.32679e-06" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation"/>
+        <geom pos="0 0 0.0181" quat="1.76043e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00000"/>
+        <geom pos="0 0 0.0181" quat="1.76038e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00001"/>
+        <geom pos="0 0 0.0181" quat="1.76038e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00002"/>
+        <geom pos="0 0 0.0181" quat="1.76037e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00003"/>
+        <geom pos="0 0 0.0181" quat="1.7604e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00004"/>
+        <geom pos="0 0 0.0181" quat="1.76045e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00005"/>
+        <geom pos="0 0 0.0181" quat="1.76034e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00006"/>
+        <geom pos="0 0 0.0181" quat="1.76043e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00007"/>
+        <geom pos="0 0 0.0181" quat="1.76037e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00008"/>
+        <geom pos="0 0 0.0181" quat="1.7604e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00009"/>
+        <geom pos="0 0 0.0181" quat="1.76038e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00010"/>
+        <geom pos="0 0 0.0181" quat="1.76038e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00011"/>
+        <geom pos="0 0 0.0181" quat="1.76037e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00012"/>
+        <geom pos="0 0 0.0181" quat="1.76037e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00013"/>
+        <geom pos="0 0 0.0181" quat="1.76038e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00014"/>
+        <geom pos="0 0 0.0181" quat="1.76031e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="base_rotation_00015"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00000"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00001"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00002"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00003"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00004"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00005"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00006"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00007"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00008"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00009"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00010"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00011"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00012"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00013"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00014"/>
+        <geom pos="0.0306 -0.0004 -0.0417" quat="0.499998 -0.5 0.5 0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_2_00015"/>
+        <body name="upper_arm" pos="0.0306 0.0183 -0.0542" quat="0.499998 0.5 0.5 -0.500002">
+          <inertial pos="0.0875462 0.00769199 0.0183923" quat="0.456443 0.455074 0.541558 0.539706" mass="0.106" diaginertia="0.000162891 0.00015251 3.9383e-05"/>
+          <joint name="joint2" pos="0 0 0" axis="0 0 1" range="-1.74533 1.74533" actuatorfrcrange="-3.3 3.3"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00000"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00001"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00002"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00003"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00004"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00005"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00006"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00007"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00008"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00009"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00010"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00011"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00012"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00013"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00014"/>
+          <geom pos="0.11257 0.0155 0.0187" quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_3_00015"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76051e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.7604e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00000"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76031e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00001"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76039e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00002"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.7604e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00003"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76043e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00004"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76034e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00005"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76048e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00006"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76038e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00007"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76038e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00008"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76031e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00009"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76037e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00010"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76043e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00011"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76045e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00012"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.7604e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00013"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76031e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00014"/>
+          <geom pos="0.065085 -0.012 0.0182" quat="1.76038e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="upper_arm_00015"/>
+          <body name="under_arm" pos="0.11257 0.028 0" quat="0.707105 0 0 0.707108">
+            <inertial pos="0.0953096 -0.00302426 0.0182473" quat="0.516959 0.510409 0.483705 0.488124" mass="0.11" diaginertia="0.000176557 0.000159367 3.19497e-05"/>
+            <joint name="joint3" pos="0 0 0" axis="0 0 1" range="-1.68948 1.5708" actuatorfrcrange="-3.3 3.3"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00000"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00001"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00002"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00003"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00004"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00005"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00006"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00007"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00008"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00009"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00010"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00011"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00012"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00013"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00014"/>
+            <geom pos="0.0698937 0.012 0.0180425" quat="9.38184e-07 -9.38187e-07 -0.707108 0.707105" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="under_arm_00015"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00000"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00001"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00002"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00003"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00004"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00005"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00006"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00007"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00008"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00009"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00010"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00011"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00012"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00013"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00014"/>
+            <geom pos="0.1224 -0.0052 0.0187" quat="1.32679e-06 1 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_4_00015"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00000"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00001"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00002"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00003"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00004"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00005"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00006"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00007"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00008"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00009"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00010"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00011"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00012"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00013"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00014"/>
+            <geom pos="0.0906998 -0.00291526 0.0181008" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_motor_holder_00015"/>
+            <body name="wrist_yaw_back" pos="0.1349 -0.0052 0">
+              <inertial pos="0.0170191 -0.00963991 0.0183001" quat="0.684473 0.684534 0.177362 0.177347" mass="0.02" diaginertia="9.21277e-06 6.60703e-06 5.89582e-06"/>
+              <joint name="joint4" pos="0 0 0" axis="0 0 1" range="-1.46608 1.64061" actuatorfrcrange="-3.3 3.3"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00000"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00001"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00002"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00003"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00004"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00005"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00006"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00007"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00008"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00009"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00010"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00011"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00012"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00013"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00014"/>
+              <geom pos="0 0 0.0183" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_back_00015"/>
+              <body name="wrist_yaw_front" pos="0.029 -0.0359 0.0183" quat="0.00315366 -0.00315177 -0.707101 -0.707098">
+                <inertial pos="-0.0288469 3.2095e-05 0.00318547" quat="0.682299 -0.189513 -0.190131 0.680002" mass="0.14" diaginertia="0.000129134 0.000113702 3.36958e-05"/>
+                <joint name="joint5" pos="0 0 0" axis="0 0 1" range="-1.54481 1.52697" actuatorfrcrange="-3.3 3.3"/>
+                <geom pos="-0.0125 0 -0.0187" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215"/>
+                <geom pos="-0.0125 0 -0.0187" quat="1 0 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00000"/>
+                <geom pos="-0.0125 0 -0.0187" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00001"/>
+                <geom pos="-0.0125 0 -0.0187" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00002"/>
+                <geom pos="-0.0125 0 -0.0187" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00003"/>
+                <geom pos="-0.0125 0 -0.0187" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00004"/>
+                <geom pos="-0.0125 0 -0.0187" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00005"/>
+                <geom pos="-0.0125 0 -0.0187" quat="1 0 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00006"/>
+                <geom pos="-0.0125 0 -0.0187" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00007"/>
+                <geom pos="-0.0125 0 -0.0187" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00008"/>
+                <geom pos="-0.0125 0 -0.0187" quat="1 0 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00009"/>
+                <geom pos="-0.0125 0 -0.0187" quat="1 0 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00010"/>
+                <geom pos="-0.0125 0 -0.0187" quat="1 0 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00011"/>
+                <geom pos="-0.0125 0 -0.0187" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00012"/>
+                <geom pos="-0.0125 0 -0.0187" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00013"/>
+                <geom pos="-0.0125 0 -0.0187" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00014"/>
+                <geom pos="-0.0125 0 -0.0187" quat="1 0 0 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_5_00015"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00000"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00001"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00002"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00003"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00004"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00005"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00006"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00007"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00008"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00009"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00010"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00011"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00012"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00013"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00014"/>
+                <geom pos="-0.0428 0 0.025043" quat="0.707105 0 -0.707108 0" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_6_00015"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76039e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76048e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00000"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76034e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00001"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76043e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00002"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76039e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00003"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76043e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00004"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76043e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00005"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76038e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00006"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76038e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00007"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76048e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00008"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76039e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00009"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76037e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00010"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76031e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00011"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76043e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00012"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76034e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00013"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76031e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00014"/>
+                <geom pos="-0.0283 0 0.0037965" quat="1.76031e-12 -1.32679e-06 1 -1.32679e-06" type="mesh" rgba="0.756863 0.180392 0.121569 1" mesh="wrist_yaw_front_00015"/>
+                <body name="gripper_fixed" pos="-0.0615 0 0.037543" quat="9.38184e-07 -0.707105 -9.38187e-07 -0.707108">
+                  <inertial pos="0.000371662 -0.000117351 -0.0253324" quat="0.345511 0.60752 0.624696 0.348277" mass="0.086" diaginertia="4.44311e-05 3.8346e-05 2.47406e-05"/>
+                  <joint name="joint6" pos="0 0 0" axis="0 0 1" range="-2.97071 2.85869" actuatorfrcrange="-3.3 3.3"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00000"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00001"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00002"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00003"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00004"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00005"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00006"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00007"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00008"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00009"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00010"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00011"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00012"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00013"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00014"/>
+                  <geom pos="-7.96855e-07 0.000218213 0.000949706" quat="2.42316e-09 0.00182633 -0.999998 -1.32679e-06" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_fixed_00015"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00000"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00001"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00002"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00003"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00004"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00005"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00006"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00007"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00008"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00009"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00010"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00011"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00012"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00013"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00014"/>
+                  <geom pos="-0.00770031 7.18812e-05 -0.0234" quat="0.0012914 -0.00129141 0.707107 -0.707104" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="sts3215_7_00015"/>
+                  <body name="gripper_center" pos="0 0 -0.064" quat="0.500912 0.499084 0.500914 -0.499086">
+                    <inertial pos="0 0 0" mass="1e-09" diaginertia="0 0 0"/>
+                  </body>
+                  <body name="gripper_back" pos="0 0 -0.009" quat="0.500912 0.499084 0.500914 -0.499086">
+                    <inertial pos="0 0 0" mass="1e-09" diaginertia="0 0 0"/>
+                  </body>
+                  <body name="camera_mount" pos="-0.00301234 -0.0240112 -0.0234002" quat="0.499085 -0.500912 0.499087 0.500914">
+                    <inertial pos="-0.0224746 -0.00102293 -0.0255423" quat="0.98477 0.0264482 0.168684 0.0327712" mass="0.012" diaginertia="5.99751e-06 5.32209e-06 1.78266e-06"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00000"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00001"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00002"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00003"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00004"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00005"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00006"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00007"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00008"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00009"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00010"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00011"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00012"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00013"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00014"/>
+                    <geom pos="0.00815 -0.0181 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="wrist_camera_mount_00015"/>
+                    <body name="camera_body" pos="-0.0299654 -0.0006 -0.0493488" quat="1.29534e-06 0.976296 -2.87171e-07 0.216439">
+                      <inertial pos="0 0 0" mass="1e-09" diaginertia="1e-09 1e-09 1e-09"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00000"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00001"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00002"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00003"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00004"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00005"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00006"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00007"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00008"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00009"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00010"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00011"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00012"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00013"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00014"/>
+                      <geom pos="0 -0.0495931 -0.000795328" quat="0.499998 0.5 0.500002 0.5" type="mesh" rgba="0.235294 0.235294 0.235294 1" mesh="camera_uvc_25x32_00015"/>
+                      <body name="camera" pos="0.0134 0.000203456 -0.000397664">
+                        <inertial pos="0 0 0" mass="1e-09" diaginertia="0 0 0"/>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="gripper_jaw" pos="-0.0201319 -0.0186736 -0.0234" quat="0.0012914 0.00129141 -0.707107 -0.707104">
+                    <inertial pos="-0.000642905 -0.0295336 0.0192755" quat="0.69526 0.71796 -0.0247092 -0.0231522" mass="0.013" diaginertia="7.18881e-06 5.73183e-06 2.02066e-06"/>
+                    <joint name="joint7" pos="0 0 0" axis="0 0 1" range="-0.174123 1.74574" actuatorfrcrange="-3.3 3.3"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00000"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00001"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00002"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00003"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00004"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00005"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00006"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00007"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00008"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00009"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00010"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00011"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00012"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00013"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00014"/>
+                    <geom pos="0.000944365 0.000490215 0.0189" quat="1 0 0 -0.000205124" type="mesh" rgba="0.964706 0.964706 0.952941 1" mesh="gripper_jaw_00015"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

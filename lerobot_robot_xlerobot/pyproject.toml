@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# NOTE: keep underscores. lerobot's register_third_party_plugins() does
+# importlib.import_module(<distribution Name>) verbatim.
+name = "lerobot_robot_xlerobot"
+version = "0.1.0"
+description = "LeRobot plugin: XLeRobot X robot (--robot.type=xlerobot_x)"
+requires-python = ">=3.10"
+dependencies = ["lerobot[feetech]>=0.4.4", "numpy"]
+
+[project.optional-dependencies]
+kinematics = ["lerobot[kinematics]"]  # placo-based IK (InverseKinematicsDeltaToJoints)
+
+[tool.setuptools.packages.find]
+include = ["lerobot_robot_xlerobot*"]
