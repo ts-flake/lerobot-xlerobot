@@ -5,3 +5,6 @@ build/
 dist/
 .venv/
 outputs/
+
+# local server config (copy of server.example.yaml)
+lerobot_xlerobot_server/server.yaml

@@ -9,30 +9,30 @@ from lerobot.robots.config import RobotConfig
 def xlerobot_cameras_config() -> dict[str, CameraConfig]:
     from lerobot.cameras.opencv.configuration_opencv import OpenCVCameraConfig, Cv2Rotation
     return {
-        "left_wrist": OpenCVCameraConfig(
-            index_or_path="/dev/video4",
-            fps=30,
-            width=640,
-            height=480,
-            rotation=Cv2Rotation.NO_ROTATION,
-            fourcc='MJPG'
-        ),
-        "right_wrist": OpenCVCameraConfig(
-            index_or_path="/dev/video6",
-            fps=30,
-            width=640,
-            height=480,
-            rotation=Cv2Rotation.NO_ROTATION,
-            fourcc='MJPG'
-        ),  
-        "head": OpenCVCameraConfig(
-            index_or_path="/dev/video8",
-            fps=30,
-            width=640,
-            height=480,
-            rotation=Cv2Rotation.NO_ROTATION,
-            fourcc='MJPG'
-        ),                     
+        # "left_wrist": OpenCVCameraConfig(
+        #     index_or_path="/dev/video4",
+        #     fps=30,
+        #     width=640,
+        #     height=480,
+        #     rotation=Cv2Rotation.NO_ROTATION,
+        #     fourcc='MJPG'
+        # ),
+        # "right_wrist": OpenCVCameraConfig(
+        #     index_or_path="/dev/video6",
+        #     fps=30,
+        #     width=640,
+        #     height=480,
+        #     rotation=Cv2Rotation.NO_ROTATION,
+        #     fourcc='MJPG'
+        # ),  
+        # "head": OpenCVCameraConfig(
+        #     index_or_path="/dev/video8",
+        #     fps=30,
+        #     width=640,
+        #     height=480,
+        #     rotation=Cv2Rotation.NO_ROTATION,
+        #     fourcc='MJPG'
+        # ),                     
         # "head": RealSenseCameraConfig(
         #     serial_number_or_name="125322060037",  # Replace with camera SN
         #     fps=30,

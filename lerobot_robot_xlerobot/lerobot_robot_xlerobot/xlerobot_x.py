@@ -338,13 +338,13 @@ class XLeRobotX(Robot):
         # We assume that at connection time, arm is in a rest position,
         # and torque can be safely disabled to run calibration
         _arm_pids = [
-            [8, 0, 32],  # shoulder_pan, reduce P to avoid oscillations
-            [18, 0, 36], # shoulder_lift
-            [16, 0, 32], # elbow_flex
+            [12, 0, 36],  # shoulder_pan, reduce P to avoid oscillations
+            [20, 0, 38], # shoulder_lift
+            [20, 0, 38], # elbow_flex
             [16, 0, 32], # wrist_flex
             [16, 0, 32], # wrist_yaw
             [16, 0, 32], # wrist_roll
-            [18, 0, 36], # gripper
+            [16, 0, 32], # gripper
         ]
         with self.bus1.torque_disabled():
             self.bus1.configure_motors()

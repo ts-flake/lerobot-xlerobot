@@ -19,14 +19,18 @@ class XLeRobotXGamepadConfig(TeleoperatorConfig):
 
     # Zero position offset in degrees
     zero_position_offset: dict[str, float] = field(default_factory=lambda: {
-        'left_arm_shoulder_lift': -80,
-        'left_arm_elbow_flex': 80,
-        'left_arm_wrist_flex': 0,
-        'left_arm_wrist_roll': 0,
-        'right_arm_shoulder_lift': -80,
-        'right_arm_elbow_flex': 80,
-        'right_arm_wrist_flex': 0,
-        'right_arm_wrist_roll': 0,
+        'left_arm_shoulder_pan': -27,
+        'left_arm_shoulder_lift': -27,
+        'left_arm_elbow_flex': 40,
+        'left_arm_wrist_flex': 33,
+        'left_arm_wrist_yaw': 19,
+        'left_arm_wrist_roll': -20,
+        'right_arm_shoulder_pan': 27,
+        'right_arm_shoulder_lift': -27,
+        'right_arm_elbow_flex': 40,
+        'right_arm_wrist_flex': 33,
+        'right_arm_wrist_yaw': -19,
+        'right_arm_wrist_roll': 20,
         'head_pitch': 35
     })
 

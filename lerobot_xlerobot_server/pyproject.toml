@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lerobot_xlerobot_server"
+version = "0.1.0"
+description = "ZMQ arm server for XLeRobot X (state / end-effector commands); protocol in PROTOCOL.md"
+requires-python = ">=3.10"
+dependencies = ["lerobot_robot_xlerobot[kinematics]", "pyzmq", "pyyaml", "numpy"]
+
+[project.scripts]
+xlerobot-server = "lerobot_xlerobot_server.server:main"
+xlerobot-server-cli = "lerobot_xlerobot_server.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["lerobot_xlerobot_server*"]

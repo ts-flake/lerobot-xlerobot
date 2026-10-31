@@ -1,0 +1,57 @@
+# XLeRobot arm server config. Copy to server.yaml; keys you set override config.DEFAULTS.
+
+robot:
+  id: xlerobot_x                  # --robot.id of lerobot-calibrate
+  port1: /dev/feetech_left        # bus 1: left arm + head
+  port2: /dev/feetech_right       # bus 2: right arm + base
+
+server:
+  bind: tcp://0.0.0.0:5560
+
+kinematics:
+  tcp_frame: gripper_tip          # fingertip centre; tool axis is +x of this frame
+
+home:                             # startup pose and default rollout begin pose
+  enabled: true
+  duration_s: 3.0
+  offset:                         # deg from URDF zero; unlisted motors -> 0; replaces the default
+    left_arm_shoulder_pan: -27    # TCP (0.28, 0.08, 0.09) m, pitched 45 deg down
+    left_arm_shoulder_lift: -27
+    left_arm_elbow_flex: 40
+    left_arm_wrist_flex: 33
+    left_arm_wrist_yaw: 19
+    left_arm_wrist_roll: -20
+    right_arm_shoulder_pan: 27    # mirror: TCP (0.28, -0.08, 0.09) m
+    right_arm_shoulder_lift: -27
+    right_arm_elbow_flex: 40
+    right_arm_wrist_flex: 33
+    right_arm_wrist_yaw: -19
+    right_arm_wrist_roll: 20
+    head_pitch: 35
+
+motion:
+  max_step_m: 0.05                # set_ee_target limit vs the current target
+  max_rot_deg: 15.0
+  dq_max_deg: 3.0                 # max joint change per waypoint
+  n_max: 5                        # max intermediate waypoints per command
+  hz: 30.0
+
+gripper:                          # linear map 0-100 -> fingertip opening
+  width_at_0_m: 0.081             # 0 = open
+  width_at_100_m: 0.0             # 100 = closed
+
+viz:
+  arm_separation_m: 0.3           # --viz only: distance between the arm bases
+
+cameras:                          # get_obs; paths from `xlerobot-server --list-cameras`
+  head:                           # per camera: path (required), width 640, height 480,
+    path: /dev/v4l/by-path/REPLACE-ME-video-index0   # fps 30, fourcc MJPG, rotation 0
+  left_wrist:
+    path: /dev/v4l/by-path/REPLACE-ME-video-index0
+  right_wrist:
+    path: /dev/v4l/by-path/REPLACE-ME-video-index0
+
+on_exit:
+  return_to_start: true           # move back to the pose found at startup
+  duration_s: 3.0
+  torque_off: false               # then cut torque (only if that pose is supported)
