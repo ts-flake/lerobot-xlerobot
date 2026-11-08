@@ -15,18 +15,18 @@ home:                             # startup pose and default rollout begin pose
   enabled: true
   duration_s: 3.0
   offset:                         # deg from URDF zero; unlisted motors -> 0; replaces the default
-    left_arm_shoulder_pan: -27    # TCP (0.28, 0.08, 0.09) m, pitched 45 deg down
-    left_arm_shoulder_lift: -27
-    left_arm_elbow_flex: 40
-    left_arm_wrist_flex: 33
-    left_arm_wrist_yaw: 19
-    left_arm_wrist_roll: -20
-    right_arm_shoulder_pan: 27    # mirror: TCP (0.28, -0.08, 0.09) m
-    right_arm_shoulder_lift: -27
-    right_arm_elbow_flex: 40
-    right_arm_wrist_flex: 33
-    right_arm_wrist_yaw: -19
-    right_arm_wrist_roll: 20
+    left_arm_shoulder_pan: 0    
+    left_arm_shoulder_lift: -70
+    left_arm_elbow_flex: 55
+    left_arm_wrist_flex: 50
+    left_arm_wrist_yaw: 0
+    left_arm_wrist_roll: 0
+    right_arm_shoulder_pan: 0
+    right_arm_shoulder_lift: -70
+    right_arm_elbow_flex: 55
+    right_arm_wrist_flex: 50
+    right_arm_wrist_yaw: 0
+    right_arm_wrist_roll: 0
     head_pitch: 35
 
 motion:
