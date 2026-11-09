@@ -88,6 +88,9 @@ class XLeRobotX(Robot):
     def __init__(self, config: XLeRobotXConfig):
         super().__init__(config)
         self.config = config
+        # Position-hold contract (needed by LeRobot remote inference): only valid when every
+        # action component is a position target, i.e. in arms-only mode (no base velocities).
+        self.supports_position_hold = bool(config.arms_only)
         self.teleop_keys = config.teleop_keys
         self._step_per_deg = (1<<12) / 360.0 # 12-bit encoder
 
@@ -183,7 +186,13 @@ class XLeRobotX(Robot):
         log_say(f"Base speed index set to {value}")
     
     @property
+    def _arm_state_keys(self) -> list[str]:
+        return [f"{m}.pos" for m in self.left_arm_motors + self.right_arm_motors]
+
+    @property
     def _state_ft(self) -> dict[str, type]:
+        if self.config.arms_only:
+            return dict.fromkeys(self._arm_state_keys, float)
         return dict.fromkeys(
             (
                 "left_arm_shoulder_pan.pos",
@@ -241,6 +250,8 @@ class XLeRobotX(Robot):
             cam.connect()
 
         self.configure()
+        if self.config.arms_only:
+            self.stop_base()  # the base is never commanded in arms-only mode
         logger.info(f"{self} connected.")
 
     @property
@@ -521,19 +532,21 @@ class XLeRobotX(Robot):
         start = time.perf_counter()
         left_arm_pos = self.bus1.sync_read("Present_Position", self.left_arm_motors, normalize=True)
         right_arm_pos = self.bus2.sync_read("Present_Position", self.right_arm_motors, normalize=True)
-        head_pos = self.bus1.sync_read("Present_Position", self.head_motors, normalize=True)
-        base_wheel_vel = self.bus2.sync_read("Present_Velocity", self.base_motors, normalize=True)
-        
         left_arm_state = {f"{k}.pos": v for k, v in left_arm_pos.items()}
         right_arm_state = {f"{k}.pos": v for k, v in right_arm_pos.items()}
-        head_state = {f"{k}.pos": v for k, v in head_pos.items()}
-        base_vel = self._wheel_raw_to_body(
-            base_wheel_vel["base_left_wheel"],
-            base_wheel_vel["base_back_wheel"],
-            base_wheel_vel["base_right_wheel"],
-        )
-        
-        obs_dict = {**left_arm_state, **right_arm_state, **head_state, **base_vel}
+
+        if self.config.arms_only:
+            obs_dict = {**left_arm_state, **right_arm_state}
+        else:
+            head_pos = self.bus1.sync_read("Present_Position", self.head_motors, normalize=True)
+            base_wheel_vel = self.bus2.sync_read("Present_Velocity", self.base_motors, normalize=True)
+            head_state = {f"{k}.pos": v for k, v in head_pos.items()}
+            base_vel = self._wheel_raw_to_body(
+                base_wheel_vel["base_left_wheel"],
+                base_wheel_vel["base_back_wheel"],
+                base_wheel_vel["base_right_wheel"],
+            )
+            obs_dict = {**left_arm_state, **right_arm_state, **head_state, **base_vel}
 
         dt_ms = (time.perf_counter() - start) * 1e3
         logger.debug(f"{self} read state: {dt_ms:.1f}ms")
@@ -563,13 +576,17 @@ class XLeRobotX(Robot):
         """
         left_arm_pos = {k: v for k, v in action.items() if k.startswith("left_arm_") and k.endswith(".pos")}
         right_arm_pos = {k: v for k, v in action.items() if k.startswith("right_arm_") and k.endswith(".pos")}
-        head_pos = {k: v for k, v in action.items() if k.startswith("head_") and k.endswith(".pos")}
-        base_goal_vel = {k: v for k, v in action.items() if k.endswith(".vel")}
-        base_wheel_goal_vel = self._body_to_wheel_raw(
-            base_goal_vel.get("x.vel", 0.0),
-            base_goal_vel.get("y.vel", 0.0),
-            base_goal_vel.get("theta.vel", 0.0),
-        )
+        if self.config.arms_only:
+            # Arms-only: head/base keys are ignored and never written (base stopped at connect).
+            head_pos, base_goal_vel, base_wheel_goal_vel = {}, {}, {}
+        else:
+            head_pos = {k: v for k, v in action.items() if k.startswith("head_") and k.endswith(".pos")}
+            base_goal_vel = {k: v for k, v in action.items() if k.endswith(".vel")}
+            base_wheel_goal_vel = self._body_to_wheel_raw(
+                base_goal_vel.get("x.vel", 0.0),
+                base_goal_vel.get("y.vel", 0.0),
+                base_goal_vel.get("theta.vel", 0.0),
+            )
         
         if self.config.max_relative_target is not None and not self.config.skip_goal_position_check:
             # Read present positions for left arm, right arm, and head
@@ -612,6 +629,36 @@ class XLeRobotX(Robot):
             **head_pos,
             **base_goal_vel,
         }
+
+    @check_if_not_connected
+    def move_to(self, targets: dict[str, float], duration_s: float = 3.0, fps: float = 50.0) -> None:
+        """Blocking min-jerk move of arm/head motors to `targets` (motor name -> normalized value).
+
+        Writes Goal_Position directly, so it also works for motors outside `action_features`
+        (e.g. the head in arms-only mode). Units are the bus' normalized units: degrees for
+        joints (`use_degrees=True`), 0-100 for grippers. Unlisted motors are not touched.
+        """
+        buses = {m: self.bus1 for m in self.left_arm_motors + self.head_motors}
+        buses.update({m: self.bus2 for m in self.right_arm_motors})
+        unknown = set(targets) - set(buses)
+        if unknown:
+            raise ValueError(f"move_to: unknown or non-position motors {sorted(unknown)}")
+        start = {}
+        for bus in (self.bus1, self.bus2):
+            names = [m for m in targets if buses[m] is bus]
+            if names:
+                start.update(bus.sync_read("Present_Position", names, normalize=True))
+        goal = {m: self._clip_norm_value(m, float(v)) for m, v in targets.items()}
+        steps = max(int(round(duration_s * fps)), 1)
+        for i in range(1, steps + 1):
+            t = i / steps
+            s = 10 * t**3 - 15 * t**4 + 6 * t**5  # min-jerk profile
+            cmd = {m: start[m] + (goal[m] - start[m]) * s for m in goal}
+            for bus in (self.bus1, self.bus2):
+                part = {m: v for m, v in cmd.items() if buses[m] is bus}
+                if part:
+                    bus.sync_write("Goal_Position", part)
+            time.sleep(1.0 / fps)
 
     def stop_base(self):
         self.bus2.sync_write("Goal_Velocity", dict.fromkeys(self.base_motors, 0), num_retry=5)

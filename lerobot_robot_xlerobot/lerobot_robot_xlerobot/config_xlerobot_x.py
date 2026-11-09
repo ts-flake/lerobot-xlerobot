@@ -65,6 +65,12 @@ class XLeRobotXConfig(RobotConfig):
     # Use degrees as the normalized actions
     use_degrees: bool = True
 
+    # Arms-only mode (e.g. policy rollout): action/observation features are the 14 arm `.pos`
+    # (6 joints + gripper per arm). Head and base are neither read nor commanded; the head keeps
+    # its last goal and the base is stopped at connect. Enables the LeRobot position-hold contract
+    # (`supports_position_hold`), which remote inference requires.
+    arms_only: bool = False
+
     # Base control keyboard keys
     teleop_keys: dict[str, str] = field(
         default_factory=lambda: {

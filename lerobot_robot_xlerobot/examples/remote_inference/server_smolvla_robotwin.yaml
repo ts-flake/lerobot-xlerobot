@@ -1,0 +1,60 @@
+# lerobot-policy-server deployment: SmolVLA fine-tuned on RoboTwin (soarmX), served to XLeRobotX.
+# Run on the GPU machine:
+#   lerobot-policy-server --config_path=server_smolvla_robotwin.yaml \
+#       --model.repo_or_path=/abs/path/to/checkpoints/<step>/pretrained_model \
+#       --zenoh.listen_endpoints='[tcp/<this-machine-ip>:7447]'
+# The robot client must pass the same --inference.deployment / --inference.semantics and
+# --fps=16.67 (see examples/rollout.py). Units are the RoboTwin sim convention: joints in rad
+# (URDF zero), grippers 0 = closed .. 1 = open; the client converts (SimConvention* steps).
+deployment: xlerobotx-robotwin
+model:
+  repo_or_path: /absolute/path/to/pretrained_model   # override on the CLI
+  revision: null
+  device: cuda
+execution:
+  supported_modes: [chunk]
+  action_fps: 16.67          # RoboTwin: one action per 15 physics steps at 250 Hz = 60 ms
+  action_deadline_s: 5.0
+  idle_timeout_s: 10.0
+  warmup_calls: 2
+  n_action_steps: null       # null = checkpoint value (30); try 15 for more frequent replanning
+language:
+  enabled: false
+zenoh:
+  mode: peer
+  listen_endpoints: [tcp/127.0.0.1:7447]   # override with the LAN address
+semantics: xlerobotx-urdf-rad-gripper-open1-v1
+robot_type: xlerobot_x
+features:
+  - name: observation.state
+    shape: [14]
+    dtype: float32
+    names: [left_arm_shoulder_pan.pos, left_arm_shoulder_lift.pos, left_arm_elbow_flex.pos,
+            left_arm_wrist_flex.pos, left_arm_wrist_yaw.pos, left_arm_wrist_roll.pos, left_arm_gripper.pos,
+            right_arm_shoulder_pan.pos, right_arm_shoulder_lift.pos, right_arm_elbow_flex.pos,
+            right_arm_wrist_flex.pos, right_arm_wrist_yaw.pos, right_arm_wrist_roll.pos, right_arm_gripper.pos]
+    semantics: xlerobotx-urdf-rad-gripper-open1-v1
+  - name: observation.images.camera1     # robot camera "head" (renamed on the client)
+    shape: [480, 640, 3]
+    dtype: uint8
+    kind: rgb
+    semantics: rgb-robotwin-head-v1
+  - name: observation.images.camera2     # "left_wrist"
+    shape: [480, 640, 3]
+    dtype: uint8
+    kind: rgb
+    semantics: rgb-robotwin-left-wrist-v1
+  - name: observation.images.camera3     # "right_wrist"
+    shape: [480, 640, 3]
+    dtype: uint8
+    kind: rgb
+    semantics: rgb-robotwin-right-wrist-v1
+action_feature:
+  name: action
+  shape: [14]
+  dtype: float32
+  names: [left_arm_shoulder_pan.pos, left_arm_shoulder_lift.pos, left_arm_elbow_flex.pos,
+          left_arm_wrist_flex.pos, left_arm_wrist_yaw.pos, left_arm_wrist_roll.pos, left_arm_gripper.pos,
+          right_arm_shoulder_pan.pos, right_arm_shoulder_lift.pos, right_arm_elbow_flex.pos,
+          right_arm_wrist_flex.pos, right_arm_wrist_yaw.pos, right_arm_wrist_roll.pos, right_arm_gripper.pos]
+  semantics: xlerobotx-urdf-rad-gripper-open1-v1
