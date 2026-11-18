@@ -43,8 +43,8 @@ URDF_LIMITS_RAD: dict[str, tuple[float, float]] = {
 }
 
 # RoboTwin soarmX `homestate` (rad) with the gripper open; every training episode starts here.
-SIM_HOME_RAD = {"shoulder_pan": 0.0, "shoulder_lift": -1.4, "elbow_flex": 1.4,
-                "wrist_flex": 0.0, "wrist_yaw": 0.0, "wrist_roll": 0.0}
+SIM_HOME_RAD = {"shoulder_pan": 0.0, "shoulder_lift": -1.22, "elbow_flex": 0.96,
+                "wrist_flex": 0.873, "wrist_yaw": 0.0, "wrist_roll": 0.0}
 SIM_HOME_GRIPPER = 1.0
 
 
